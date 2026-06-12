@@ -1,0 +1,40 @@
+import React from 'react';
+import { HeroSection } from './components/sections/HeroSection';
+import { ResumeSection } from './components/sections/ResumeSection';
+import { PiankeSection } from './components/sections/PiankeSection';
+import { DiarySection } from './components/sections/DiarySection';
+import { PhotoSection } from './components/sections/PhotoSection';
+import { FooterSection } from './components/sections/FooterSection';
+
+type TransitionBandProps = {
+  from: string;
+  to: string;
+  accent: string;
+};
+
+const TransitionBand: React.FC<TransitionBandProps> = ({ from, to, accent }) => (
+  <div className={`relative h-16 bg-gradient-to-b ${from} ${to} md:h-20`} aria-hidden="true">
+    <div className="absolute left-1/2 top-1/2 h-px w-[min(72rem,82vw)] -translate-x-1/2" style={{ backgroundColor: accent }} />
+    <div className="absolute left-1/2 top-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rotate-45 border" style={{ borderColor: accent, backgroundColor: 'currentColor' }} />
+  </div>
+);
+
+export default function App() {
+  return (
+    <div className="overflow-x-hidden bg-[#f7f5f0] text-[#1a1a1a] selection:bg-neutral-900 selection:text-[#f7f5f0]">
+      <HeroSection />
+      <ResumeSection />
+
+      <TransitionBand from="from-[#fbfaf7]" to="to-pianke-bg" accent="rgba(83,107,53,0.22)" />
+      <PiankeSection />
+
+      <TransitionBand from="from-pianke-bg" to="to-diary-bg" accent="rgba(196,150,76,0.28)" />
+      <DiarySection />
+
+      <TransitionBand from="from-diary-bg" to="to-photo-bg" accent="rgba(15,15,15,0.32)" />
+      <PhotoSection />
+
+      <FooterSection />
+    </div>
+  );
+}

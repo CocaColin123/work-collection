@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>刘沛龙 - 个人作品集 | 版本 C: 混合反差之旅</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Noto+Sans+SC:wght@400;700;900&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+      overflow-x: hidden;
+      background-color: #171717; /* 默认深色，后续通过包裹层覆盖背景 */
+    }
+    
+    /* 根据背景自动反色的贯穿竖线 */
+    .center-line-blend {
+      position: fixed;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1.5px;
+      background-color: #fff;
+      mix-blend-mode: difference;
+      transform: translateX(-50%);
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .branch-line-blend {
+      position: absolute;
+      left: -2rem;
+      top: 50%;
+      width: 2rem;
+      height: 1.5px;
+      background-color: #fff;
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .branch-line-blend { display: block; }
+    }
+
+    @media (max-width: 768px) {
+      .center-line-blend { display: none; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- 魔法竖线：利用 difference 混合模式实现自动反转颜色 -->
+  <div class="center-line-blend"></div>
+
+  <!-- 序厅：暗色区域 (Hero + About + Tech) -->
+  <div class="bg-neutral-900 text-neutral-100 pb-32">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center relative px-6 md:px-12">
+      <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+        <div class="flex flex-col justify-center">
+          <h1 class="text-7xl md:text-8xl lg:text-9xl font-black tracking-tight mb-4">刘沛龙</h1>
+          <p class="text-xl md:text-2xl text-blue-400 mb-8 font-bold tracking-wide">Product Manager / Technologist</p>
+          <p class="text-neutral-400 leading-relaxed text-lg max-w-sm">
+            一个能用 AI 工具把想法从 PRD 变成真实上线产品的 PM。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me & Data Cards -->
+    <section class="py-24 relative px-6 md:px-12">
+      <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+        
+        <div class="space-y-6 text-neutral-400 text-lg leading-relaxed">
+          <h2 class="text-3xl font-bold text-white mb-8 border-b-2 border-neutral-800 pb-4">关于我</h2>
+          <p>19 岁，上海，产品经理实习生（AI 产品 / 工具产品方向）。</p>
+          <ul class="space-y-4 pt-4 border-t border-neutral-800">
+            <li><span class="text-blue-400 mr-2">/</span>由于在 3DM（国内头部单机游戏门户）主导风灵月影 App 商城改版，首次注册下单率提升了 13%。</li>
+            <li><span class="text-blue-400 mr-2">/</span>在皓瀚同辉（前哪吒汽车 CMO 带队初创）参与车载 AI 陪伴玩偶产品调研。</li>
+            <li><span class="text-blue-400 mr-2">/</span>独立完成片刻从 PRD 到微信小程序上线的完整闭环。</li>
+            <li><span class="text-blue-400 mr-2">/</span>构建了 AI-Native 工作流：以框架驱动 Claude Code + Codex + Cursor 多模型协作。</li>
+          </ul>
+        </div>
+
+        <div class="relative flex items-center">
+          <div class="branch-line-blend"></div>
+          <div class="grid grid-cols-2 gap-4 w-full">
+            <div class="bg-neutral-800/50 p-8 rounded-xl backdrop-blur">
+              <div class="text-4xl font-bold text-white mb-2">3+</div>
+              <div class="text-sm font-bold text-neutral-500 uppercase tracking-widest">独立项目 <br> 从0到1</div>
+            </div>
+            <div class="bg-blue-900/20 p-8 rounded-xl backdrop-blur">
+              <div class="text-4xl font-bold text-blue-400 mb-2">6</div>
+              <div class="text-sm font-bold text-blue-200 uppercase tracking-widest">个模板 <br> 小程序上线</div>
+            </div>
+            <div class="bg-neutral-800/50 p-8 rounded-xl backdrop-blur">
+              <div class="text-4xl font-bold text-white mb-2">2</div>
+              <div class="text-sm font-bold text-neutral-500 uppercase tracking-widest">段实习 <br> 游戏+AI硬件</div>
+            </div>
+            <div class="bg-neutral-800/50 p-8 rounded-xl backdrop-blur">
+              <div class="text-4xl font-bold text-white mb-2">Gen-AI</div>
+              <div class="text-sm font-bold text-neutral-500 uppercase tracking-widest">Native <br> 工具栈落地</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-24 relative px-6 md:px-12">
+      <div class="max-w-6xl w-full mx-auto">
+        <h2 class="text-center text-neutral-600 font-bold uppercase tracking-[0.3em] mb-16 text-sm">Capabilities & Paradigm</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="text-center group">
+            <div class="text-4xl mb-4 group-hover:-translate-y-2 transition-transform duration-300">📐</div>
+            <h3 class="font-bold text-white mb-2">产品设计</h3>
+            <p class="text-xs text-neutral-500">需求分析 / 竞品研究 / 信息架构 / PRD / MVP 设计 / 版本规划</p>
+          </div>
+          <div class="text-center group">
+            <div class="text-4xl mb-4 group-hover:-translate-y-2 transition-transform duration-300">🤖</div>
+            <h3 class="font-bold text-white mb-2">AI编程范式</h3>
+            <p class="text-xs text-neutral-500">Claude Code / Codex / Cursor / 智能原型开发 / 验收标准驱动</p>
+          </div>
+          <div class="text-center group">
+            <div class="text-4xl mb-4 group-hover:-translate-y-2 transition-transform duration-300">⚡️</div>
+            <h3 class="font-bold text-white mb-2">工程原型</h3>
+            <p class="text-xs text-neutral-500">Figma / Axure / React / Vite / HTML/CSS/JavaScript</p>
+          </div>
+          <div class="text-center group">
+            <div class="text-4xl mb-4 group-hover:-translate-y-2 transition-transform duration-300">🎯</div>
+            <h3 class="font-bold text-white mb-2">业务领域</h3>
+            <p class="text-xs text-neutral-500">工具产品 / 创作者产品 / 游戏功能 / 本地化体验</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div> <!-- 序厅结束 -->
+
+  <!-- CSS 渐变过渡 1: Neutral 900 -> 日记库米白 -->
+  <div class="h-[600px] w-full bg-gradient-to-b from-neutral-900 to-[#faf8f2]"></div>
+
+  <!-- 世界 1: 日记库 (米白 #faf8f2) -->
+  <section class="min-h-screen py-24 relative px-6 md:px-12 bg-[#faf8f2] text-[#2d2b28]">
+    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-7xl font-bold mb-4">日记库</h2>
+          <p class="text-xl text-[#c4964c] font-bold">Diary Vault</p>
+        </div>
+        
+        <p class="text-xl leading-relaxed font-medium bg-white/50 p-6 rounded-xl border border-black/5">
+          本地优先的私人日记归档工具，用 Outer Wilds 太阳系 3D 导航替代传统列表。
+        </p>
+
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="w-8 h-8 rounded-full bg-[#c4964c]/20 text-[#c4964c] flex items-center justify-center font-bold mr-4 shrink-0">1</div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">本地文件即真理</h4>
+              <p class="text-black/60 text-sm">坚持 Markdown 纯文本归档，不随波逐流绑定专有云端格式或昂贵的数据库。</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-8 h-8 rounded-full bg-[#c4964c]/20 text-[#c4964c] flex items-center justify-center font-bold mr-4 shrink-0">2</div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">数据驱动分类</h4>
+              <p class="text-black/60 text-sm">抛弃“拍脑袋分类”，对 111 篇真实过往日记进行语义级标注，推导出 6维度×12标签 的精密体系。</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="w-8 h-8 rounded-full bg-[#c4964c]/20 text-[#c4964c] flex items-center justify-center font-bold mr-4 shrink-0">3</div>
+            <div>
+              <h4 class="font-bold text-lg mb-1">反框架的心流</h4>
+              <p class="text-black/60 text-sm">严格定义产品“不是什么”边界规则，防止在迭代中失控蔓延，保护作为“私人后花园”的心智定位。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="branch-line-blend"></div>
+        <div class="bg-white rounded-xl shadow-2xl p-4 transform rotate-1 hover:rotate-0 transition-transform">
+          <div class="bg-gray-100 rounded flex items-center justify-center text-gray-400 text-sm h-[450px]">
+            [日记库 - 阅读态轻量沉浸截图]
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CSS 渐变过渡 2: 日记库米白 -> 摄影集深黑 -->
+  <div class="h-[600px] w-full bg-gradient-to-b from-[#faf8f2] to-[#0f0f0f]"></div>
+
+  <!-- 世界 2: 摄影集 (深黑 #0f0f0f) -->
+  <section class="min-h-screen py-24 relative px-6 md:px-12 bg-[#0f0f0f] text-[#d4d4d4]">
+    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      
+      <!-- 摄影集是暗黑空间，左右互换排版增强错落感 -->
+      <div class="relative order-2 md:order-1">
+        <div class="branch-line-blend" style="left: auto; right: -2rem;"></div>
+        <div class="bg-black/80 rounded border border-white/10 flex items-center justify-center text-white/50 text-sm h-[500px] shadow-2xl shadow-black">
+          [摄影集 - 横幅电影感排版截图]
+        </div>
+      </div>
+      
+      <div class="space-y-8 order-1 md:order-2">
+        <div>
+          <h2 class="text-7xl font-bold text-white mb-4">摄影集</h2>
+          <p class="text-xl text-[#60a5fa] font-bold">Colin's Photography</p>
+        </div>
+        
+        <p class="text-xl leading-relaxed text-neutral-400 font-medium">
+          个人摄影作品集网站，把照片当作被观看的对象而非被浏览的列表。
+        </p>
+
+        <div class="border-l border-neutral-800 pl-6 space-y-6">
+          <div>
+            <h4 class="font-bold text-white mb-2">📸 摄影是绝对主角</h4>
+            <p class="text-neutral-500 text-sm">抛弃绚丽的交互。UI 效果如画廊灯光，必须支持照片观看而非与其竞争眼球。</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-2">🎞️ 暗房观看室</h4>
+            <p class="text-neutral-500 text-sm">不仅仅是设置 Dark Mode。而是将黑暗作为沉浸式的实体观看空间，隐退环境干扰。</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white mb-2">🌬️ 安静的品牌声音</h4>
+            <p class="text-neutral-500 text-sm">观察性、亲密感。克制使用任何互联网营销语言，通过大量留白让图像产生自证明。</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CSS 渐变过渡 3: 摄影集深黑 -> 片刻米黄 -->
+  <div class="h-[600px] w-full bg-gradient-to-b from-[#0f0f0f] to-[#fef9ed]"></div>
+
+  <!-- 世界 3: 片刻 (米黄 #fef9ed) -->
+  <section class="min-h-screen py-24 relative px-6 md:px-12 bg-[#fef9ed] text-[#3d3427]">
+    <div class="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-7xl font-bold mb-4">片刻</h2>
+          <p class="text-xl text-[#a3b86c] font-bold">Pianke Editor</p>
+        </div>
+        
+        <p class="text-xl leading-relaxed font-bold">
+          从建站工具成功转型为 AI 辅助图片模板编辑器，已有 <span class="bg-[#a3b86c]/20 px-2 rounded">6 个模板</span>在微信小程序矩阵上线。
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+          <div class="bg-white p-6 border border-[#3d3427]/10 rounded-2xl shadow-sm">
+            <h4 class="font-bold text-lg mb-2 text-[#a3b86c]">战略调优</h4>
+            <p class="text-[#3d3427]/70 text-sm">用自身沉淀的产品原则主动推翻原有的“建站”方向，专注“图片生成”痛点，砍掉冗余逻辑实现快速变现。</p>
+          </div>
+          <div class="bg-white p-6 border border-[#3d3427]/10 rounded-2xl shadow-sm">
+            <h4 class="font-bold text-lg mb-2 text-[#a3b86c]">热插拔引擎</h4>
+            <p class="text-[#3d3427]/70 text-sm">提取公共编辑底座，不同模板只提供对应的渲染参数层。让新增一个全功能模板的最短开发路径缩至 2 天内。</p>
+          </div>
+          <div class="bg-white p-6 border border-[#3d3427]/10 rounded-2xl shadow-sm">
+            <h4 class="font-bold text-lg mb-2 text-[#a3b86c]">刷新即清空</h4>
+            <p class="text-[#3d3427]/70 text-sm">不再做沉重的同步网络请求。大胆启用彻底的 <code>sessionStorage</code> 架构：创作用于分享，不必为低频的永久编辑归档买单。</p>
+          </div>
+          <div class="bg-white p-6 border border-[#3d3427]/10 rounded-2xl shadow-sm">
+            <h4 class="font-bold text-lg mb-2 text-[#a3b86c]">端侧降级适配</h4>
+            <p class="text-[#3d3427]/70 text-sm">应对小程序 30M 包大小红线，搭建精细的懒加载体系；自研针对 iOS 15 WebKit 旧内核渲染差异的兼容方案。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative flex justify-center">
+        <div class="branch-line-blend"></div>
+        <div class="bg-[#3d3427]/5 rounded-3xl p-4 border border-[#3d3427]/10 shadow-[0_30px_60px_rgba(0,0,0,0.1)]">
+          <div class="bg-white rounded-[2rem] flex flex-col items-center justify-center text-neutral-400 text-sm w-[280px] h-[580px] border-8 border-neutral-900 shadow-inner overflow-hidden relative">
+            <div class="absolute top-0 w-32 h-6 bg-neutral-900 rounded-b-xl z-20"></div>
+            [片刻小程序真机比例渲染截屏]
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-20 bg-neutral-950 text-white relative z-10 text-center px-6 border-t border-neutral-900">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <h2 class="text-4xl font-bold tracking-tight">让我们用魔法和代码，做些真实的东西。</h2>
+      <div class="flex justify-center space-x-6 text-neutral-400">
+        <a href="#" class="hover:text-white pb-1 border-b border-transparent hover:border-white transition-all">l15225585490@gmail.com</a>
+        <a href="#" class="hover:text-white pb-1 border-b border-transparent hover:border-white transition-all">GitHub Profile</a>
+      </div>
+      <p class="text-neutral-600 text-sm pt-12">
+        Designed & Built by 刘沛龙 &bull; 2026
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
