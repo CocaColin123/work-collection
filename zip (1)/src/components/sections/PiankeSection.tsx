@@ -1,7 +1,7 @@
 import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
 import AnimatedContent from '../react-bits/AnimatedContent';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
 type FanShot = {
   src: string;
@@ -75,9 +75,11 @@ const PiankeFanShowcase: React.FC<{ shots: readonly FanShot[]; copy: ShowcaseCop
   );
 };
 
-export const PiankeSection: React.FC = () => {
-  const { pianke } = portfolioData.projects;
+type PiankeSectionProps = {
+  pianke: PortfolioData['projects']['pianke'];
+};
 
+export const PiankeSection: React.FC<PiankeSectionProps> = ({ pianke }) => {
   return (
     <section className="bg-pianke-bg px-5 py-24 text-pianke-text md:px-12">
       <div className="mx-auto max-w-7xl">

@@ -38,3 +38,24 @@ img {
   grid-template-rows: 1fr;
   opacity: 1;
 }
+
+.language-shot {
+  animation: language-float 9s ease-in-out infinite;
+  transform-origin: center;
+  will-change: transform, translate;
+}
+
+.language-entry:hover,
+.language-entry:focus {
+  background-color: rgba(248, 244, 235, 0.94);
+}
+
+@keyframes language-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -14px;
+  }
+}

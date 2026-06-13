@@ -1,11 +1,13 @@
 import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
 import AnimatedContent from '../react-bits/AnimatedContent';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
-export const PhotoSection: React.FC = () => {
-  const { photo } = portfolioData.projects;
+type PhotoSectionProps = {
+  photo: PortfolioData['projects']['photo'];
+};
 
+export const PhotoSection: React.FC<PhotoSectionProps> = ({ photo }) => {
   return (
     <section className="bg-photo-bg px-5 py-24 text-photo-text md:px-12">
       <div className="mx-auto max-w-7xl">

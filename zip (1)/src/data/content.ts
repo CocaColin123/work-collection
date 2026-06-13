@@ -1,4 +1,146 @@
-export const portfolioData = {
+﻿const BASE = import.meta.env.BASE_URL;
+
+type LinkItem = {
+  label: string;
+  href: string;
+};
+
+type FactItem = {
+  value: string;
+  label: string;
+};
+
+type ExperienceItem = {
+  company: string;
+  companyTag: string;
+  role: string;
+  period: string;
+  summary: string;
+  details: string[];
+};
+
+type SkillGroup = {
+  title: string;
+  items: string[];
+};
+
+type ProjectFeature = {
+  title: string;
+  description: string;
+};
+
+type PiankeFeature = ProjectFeature & {
+  step: string;
+  details: string[];
+};
+
+type GalleryShot = {
+  src: string;
+  alt: string;
+  height: number;
+};
+
+export type PortfolioData = {
+  hero: {
+    eyebrow: string;
+    mainTitle: string;
+    mainTitleEmphasis: string;
+    name: string;
+    role: string;
+    location: string;
+    intro: string;
+    contact: LinkItem[];
+    facts: FactItem[];
+  };
+  resume: {
+    title: string;
+    eyebrow: string;
+    experience: ExperienceItem[];
+    education: {
+      school: string;
+      major: string;
+      period: string;
+      summary: string;
+    };
+    skillGroups: SkillGroup[];
+  };
+  paradigm: {
+    title: string;
+    subtitle: string;
+    description: string;
+    features: ProjectFeature[];
+  };
+  projects: {
+    pianke: {
+      tag: string;
+      title: string;
+      subtitle: string;
+      role: string;
+      period: string;
+      description: string;
+      logoText: string;
+      link: string;
+      stats: FactItem[];
+      shots: {
+        hero: string;
+        phone: string;
+        secondary: string;
+        gallery: GalleryShot[];
+      };
+      showcase: {
+        eyebrow: string;
+        title: string;
+        description: string;
+      };
+      features: PiankeFeature[];
+    };
+    diary: {
+      title: string;
+      subtitle: string;
+      role: string;
+      description: string;
+      shots: {
+        cover: string;
+        timeline: string;
+      };
+      stats: Array<{
+        label: string;
+        count: string;
+        hex: string;
+      }>;
+      features: ProjectFeature[];
+    };
+    photo: {
+      title: string;
+      subtitle: string;
+      role: string;
+      description: string;
+      quote: string;
+      shots: {
+        landing: string;
+        album: string;
+        about: string;
+        journal: string;
+        kingdom: string;
+      };
+      focusNote: string;
+      pages: Array<{
+        label: string;
+        text: string;
+      }>;
+      features: ProjectFeature[];
+    };
+  };
+  footer: {
+    quoteTitle: string;
+    quote: string;
+    links: LinkItem[];
+    copyright: string;
+    tagline: string;
+  };
+};
+
+export const portfolioData: PortfolioData = {
   hero: {
     eyebrow: "Personal Digital Portfolio · 2026",
     mainTitle: "把产品想法",
@@ -10,7 +152,8 @@ export const portfolioData = {
       "我关注工具产品、创作者工具和 AI-Native 工作流。能从需求分析、竞品拆解、信息架构、PRD 到前端原型实现，把一个模糊想法推进到可以被真实用户打开和使用的版本。",
     contact: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
-      { label: "Resume PDF", href: "/liu-peilong-resume.pdf" }
+      { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
+      { label: "English", href: "#/en" }
     ],
     facts: [
       { value: "13%", label: "3DM 首次注册下单率提升" },
@@ -109,16 +252,16 @@ export const portfolioData = {
         { value: "0", label: "账户依赖" }
       ],
       shots: {
-        hero: "/images/pianke/template-picker.png",
-        phone: "/images/pianke/ratio-editor.png",
-        secondary: "/images/pianke/garden-film-collage.png",
+        hero: `${BASE}images/pianke/template-picker.png`,
+        phone: `${BASE}images/pianke/ratio-editor.png`,
+        secondary: `${BASE}images/pianke/garden-film-collage.png`,
         gallery: [
-          { src: "/images/pianke/template-picker.png", alt: "片刻模板选择页", height: 1040 },
-          { src: "/images/pianke/ratio-editor.png", alt: "片刻排版比例编辑", height: 1347 },
-          { src: "/images/pianke/star-motion.png", alt: "片刻星形动效模板", height: 1347 },
-          { src: "/images/pianke/heart-motion.png", alt: "片刻爱心动效模板", height: 1347 },
-          { src: "/images/pianke/camera-card.png", alt: "片刻相机参数卡片模板", height: 1040 },
-          { src: "/images/pianke/garden-film-collage.png", alt: "片刻花园胶片拼贴模板", height: 1347 }
+          { src: `${BASE}images/pianke/template-picker.png`, alt: "片刻模板选择页", height: 1040 },
+          { src: `${BASE}images/pianke/ratio-editor.png`, alt: "片刻排版比例编辑", height: 1347 },
+          { src: `${BASE}images/pianke/star-motion.png`, alt: "片刻星形动效模板", height: 1347 },
+          { src: `${BASE}images/pianke/heart-motion.png`, alt: "片刻爱心动效模板", height: 1347 },
+          { src: `${BASE}images/pianke/camera-card.png`, alt: "片刻相机参数卡片模板", height: 1040 },
+          { src: `${BASE}images/pianke/garden-film-collage.png`, alt: "片刻花园胶片拼贴模板", height: 1347 }
         ]
       },
       showcase: {
@@ -167,8 +310,8 @@ export const portfolioData = {
       description:
         "一个把私人日记当作编辑档案来对待的本地工具。不是云笔记，不是博客后台，不是 AI 写作助手。",
       shots: {
-        cover: "/images/diary/cover.png",
-        timeline: "/images/diary/timeline.png"
+        cover: `${BASE}images/diary/cover.png`,
+        timeline: `${BASE}images/diary/timeline.png`
       },
       stats: [
         { label: "郁", count: "49 篇", hex: "#60a5fa" },
@@ -212,11 +355,11 @@ export const portfolioData = {
         "一个把照片当作被观看的对象，而非被浏览的列表的个人摄影世界。",
       quote: "The site should feel like a night walk through a personal archive.",
       shots: {
-        landing: "/images/photo/landing.png",
-        album: "/images/photo/album.png",
-        about: "/images/photo/about.png",
-        journal: "/images/photo/journal.png",
-        kingdom: "/images/photo/kingdom.png"
+        landing: `${BASE}images/photo/landing.png`,
+        album: `${BASE}images/photo/album.png`,
+        about: `${BASE}images/photo/about.png`,
+        journal: `${BASE}images/photo/journal.png`,
+        kingdom: `${BASE}images/photo/kingdom.png`
       },
       focusNote: "按 Esc 退回黑暗，按方向键盲选光影。照片在这个环境里是唯一的光源。",
       pages: [
@@ -261,10 +404,10 @@ export const portfolioData = {
       "工具不该只是功能集合。好的工具会让用户忘掉界面本身，只感觉自己的想法更快落到了现实里。",
     links: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
-      { label: "Resume PDF", href: "/liu-peilong-resume.pdf" },
-      { label: "Pianke Demo", href: "https://cocacolin123.github.io/taobao-ai-demo/" }
+      { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
+      { label: "双语入口", href: "#/" }
     ],
     copyright: "Designed & Built by Colin L. © 2026",
     tagline: "AI Product Manager · Creative Technologist"
   }
-} as const;
+};

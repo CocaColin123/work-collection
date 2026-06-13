@@ -1,11 +1,14 @@
 import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
 import AnimatedContent from '../react-bits/AnimatedContent';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
-export const ResumeSection: React.FC = () => {
-  const { resume, paradigm } = portfolioData;
+type ResumeSectionProps = {
+  resume: PortfolioData['resume'];
+  paradigm: PortfolioData['paradigm'];
+};
 
+export const ResumeSection: React.FC<ResumeSectionProps> = ({ resume, paradigm }) => {
   return (
     <section className="bg-[#fbfaf7] px-5 py-24 text-ink md:px-12">
       <div className="mx-auto max-w-7xl">

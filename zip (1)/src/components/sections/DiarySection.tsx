@@ -1,11 +1,13 @@
 import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
 import AnimatedContent from '../react-bits/AnimatedContent';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
-export const DiarySection: React.FC = () => {
-  const { diary } = portfolioData.projects;
+type DiarySectionProps = {
+  diary: PortfolioData['projects']['diary'];
+};
 
+export const DiarySection: React.FC<DiarySectionProps> = ({ diary }) => {
   return (
     <section className="bg-diary-bg px-5 py-24 text-[#2d2b28] md:px-12">
       <div className="mx-auto max-w-7xl">

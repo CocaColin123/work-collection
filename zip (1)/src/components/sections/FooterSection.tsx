@@ -1,10 +1,12 @@
 import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
-export const FooterSection: React.FC = () => {
-  const { footer } = portfolioData;
+type FooterSectionProps = {
+  footer: PortfolioData['footer'];
+};
 
+export const FooterSection: React.FC<FooterSectionProps> = ({ footer }) => {
   return (
     <footer className="bg-ink px-5 py-28 text-center text-[#f7f5f0] md:px-12">
       <div className="mx-auto flex max-w-5xl flex-col items-center">

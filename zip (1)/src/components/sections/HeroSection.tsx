@@ -2,11 +2,13 @@ import React from 'react';
 import { FadeUp } from '../ui/FadeUp';
 import SplitText from '../react-bits/SplitText';
 import AnimatedContent from '../react-bits/AnimatedContent';
-import { portfolioData } from '../../data/content';
+import type { PortfolioData } from '../../data/content';
 
-export const HeroSection: React.FC = () => {
-  const { hero } = portfolioData;
+type HeroSectionProps = {
+  hero: PortfolioData['hero'];
+};
 
+export const HeroSection: React.FC<HeroSectionProps> = ({ hero }) => {
   return (
     <section className="min-h-screen bg-[#f7f5f0] text-ink px-5 py-8 md:px-12 md:py-12 relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-px bg-ink/20" />
