@@ -25,7 +25,9 @@ export const FooterSection: React.FC<FooterSectionProps> = ({ footer }) => {
               <a
                 key={link.label}
                 href={link.href}
-                className="border border-white/15 px-5 py-3 font-sans-zh text-xs uppercase tracking-[0.18em] text-neutral-300 transition-colors hover:border-[#f7f5f0] hover:text-[#f7f5f0]"
+                className={`border border-white/15 px-5 py-3 font-sans-zh text-xs text-neutral-300 transition-colors hover:border-[#f7f5f0] hover:text-[#f7f5f0] ${
+                  link.href === '#/game-mod-notes' ? 'normal-case tracking-[0.08em]' : 'uppercase tracking-[0.18em]'
+                }`}
               >
                 {link.label}
               </a>
