@@ -1,4 +1,5 @@
 import React from 'react';
+import { CircleAlert, ExternalLink } from 'lucide-react';
 import { FadeUp } from '../ui/FadeUp';
 import AnimatedContent from '../react-bits/AnimatedContent';
 import type { PortfolioData } from '../../data/content';
@@ -8,6 +9,12 @@ type DiarySectionProps = {
 };
 
 export const DiarySection: React.FC<DiarySectionProps> = ({ diary }) => {
+  const liveLinkProps = {
+    href: diary.live.href,
+    target: "_blank",
+    rel: "noreferrer"
+  };
+
   return (
     <section className="bg-diary-bg px-5 py-24 text-[#2d2b28] md:px-12">
       <div className="mx-auto max-w-7xl">
@@ -18,7 +25,24 @@ export const DiarySection: React.FC<DiarySectionProps> = ({ diary }) => {
               <h2 className="font-serif-zh text-7xl font-black leading-none md:text-9xl">{diary.title}</h2>
               <p className="mt-4 font-serif-en text-3xl italic text-diary-accent">{diary.subtitle}</p>
             </div>
-            <p className="max-w-3xl font-serif-zh text-2xl font-bold leading-10">{diary.description}</p>
+            <div className="max-w-3xl lg:justify-self-end">
+              <p className="font-serif-zh text-2xl font-bold leading-10">{diary.description}</p>
+              <div className="mt-5">
+                <p className="flex max-w-2xl gap-2 font-sans-zh text-xs leading-6 text-[#2d2b28]/45">
+                  <CircleAlert className="mt-1 h-4 w-4 shrink-0" strokeWidth={1.6} aria-hidden="true" />
+                  <span>{diary.live.note}</span>
+                </p>
+              </div>
+              <div className="mt-6 flex lg:justify-end">
+                <a
+                  {...liveLinkProps}
+                  className="inline-flex w-fit shrink-0 items-center gap-3 border border-[#2d2b28]/35 bg-[#2d2b28] px-5 py-4 font-sans-zh text-sm font-semibold tracking-[0.12em] text-[#fffdf7] shadow-[0_18px_45px_rgba(45,43,40,0.16)] transition duration-300 hover:-translate-y-1 hover:bg-[#fffdf7] hover:text-[#2d2b28] focus:-translate-y-1 focus:outline-none"
+                >
+                  {diary.live.label}
+                  <ExternalLink className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                </a>
+              </div>
+            </div>
           </div>
         </FadeUp>
 
@@ -46,15 +70,23 @@ export const DiarySection: React.FC<DiarySectionProps> = ({ diary }) => {
 
           <div className="relative min-h-[620px]">
             <FadeUp delay={0.12}>
-              <div className="border border-[#2d2b28]/15 bg-[#fffdf8] p-3 shadow-[0_28px_80px_rgba(45,43,40,0.14)]">
+              <a
+                {...liveLinkProps}
+                aria-label={`${diary.live.label}: ${diary.title}`}
+                className="group block border border-[#2d2b28]/15 bg-[#fffdf8] p-3 shadow-[0_28px_80px_rgba(45,43,40,0.14)] transition duration-300 hover:-translate-y-1 hover:border-[#2d2b28]/35 hover:shadow-[0_32px_90px_rgba(45,43,40,0.18)] focus:-translate-y-1 focus:border-[#2d2b28]/45 focus:outline-none"
+              >
                 <img src={diary.shots.cover} alt={`${diary.title} cover page`} className="block w-full" />
-              </div>
+              </a>
             </FadeUp>
 
             <FadeUp delay={0.26} className="mt-6 lg:absolute lg:-bottom-4 lg:-left-10 lg:mt-0 lg:w-[72%]">
-              <div className="border border-[#2d2b28]/15 bg-[#f5efe4] p-3 shadow-[0_24px_70px_rgba(45,43,40,0.12)]">
+              <a
+                {...liveLinkProps}
+                aria-label={`${diary.live.label}: ${diary.title} timeline`}
+                className="group block border border-[#2d2b28]/15 bg-[#f5efe4] p-3 shadow-[0_24px_70px_rgba(45,43,40,0.12)] transition duration-300 hover:-translate-y-1 hover:border-[#2d2b28]/35 hover:shadow-[0_28px_78px_rgba(45,43,40,0.16)] focus:-translate-y-1 focus:border-[#2d2b28]/45 focus:outline-none"
+              >
                 <img src={diary.shots.timeline} alt={`${diary.title} timeline page`} className="block w-full" />
-              </div>
+              </a>
             </FadeUp>
           </div>
         </div>

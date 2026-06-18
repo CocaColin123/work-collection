@@ -4,14 +4,14 @@ const BASE = import.meta.env.BASE_URL;
 
 export const portfolioDataEn: PortfolioData = {
   hero: {
-    eyebrow: "Personal Digital Portfolio · 2026",
-    mainTitle: "From product questions",
-    mainTitleEmphasis: "to usable tools",
+    eyebrow: "Resume-driven Personal Site · 2026",
+    mainTitle: "From market signals",
+    mainTitleEmphasis: "to usable AI tools",
     name: "Pei Long Liu",
-    role: "Product Manager Intern / AI Products & Tool Products",
-    location: "Shanghai · Available immediately · Long-term internship",
+    role: "PM Intern | AI Tools / Internationalization / Growth",
+    location: "Shanghai · Available now · 6-month internship",
     intro:
-      "I work across requirement analysis, competitive research, information architecture, PRDs, and AI-assisted front-end prototyping. My focus is turning loose product ideas into clear workflows, usable interfaces, and launchable MVPs.",
+      "I focus on AI tools, creator workflows, international product scenarios, and conversion growth. I work from user research, overseas product research, information architecture, PRDs, and MVP scoping to AI-assisted prototypes that can be reviewed and iterated.",
     contact: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume-en.pdf` },
@@ -20,7 +20,7 @@ export const portfolioDataEn: PortfolioData = {
     facts: [
       { value: "13%", label: "Lift in first-time registered purchase rate" },
       { value: "200+", label: "AI companion interaction cases reviewed" },
-      { value: "6+", label: "Pianke template capabilities shipped" }
+      { value: "6+", label: "Pianke template capabilities built" }
     ]
   },
   resume: {
@@ -33,12 +33,12 @@ export const portfolioDataEn: PortfolioData = {
         role: "Product Manager Intern",
         period: "2025.12 - 2026.05",
         summary:
-          "Worked on the desktop store optimization for a FLiNG-related product line. The redesign focused on low first-time purchase rate, organic purchase rate, and returning-user purchase rate by rebuilding membership value presentation, product ranking, and first-screen conversion paths.",
+          "Worked on desktop store optimization for a FLiNG-related product line, with additional research into overseas game-tool users and Southeast Asian market adaptation. The redesign focused on clearer value communication, lower understanding cost, stronger trust signals, and shorter purchase paths.",
         details: [
-          "Analyzed game tools, membership systems, and tool-based stores, comparing information architecture, paid entry points, benefit presentation, ranking logic, and conversion paths.",
-          "Produced redesign prototypes with Axure, Figma, and MockingBot around a clear target: lower understanding cost, stronger payment reasons, and higher visual impact.",
-          "Maintained an optimization requirement pool and split information architecture, membership benefits, store ranking, visual hierarchy, and localization preparation into a two-stage roadmap.",
-          "Presented competitive research, redesign demos, and iteration plans in team meetings. The proposal was recognized by supervisors and the CEO, then entered the follow-up roadmap.",
+          "Observed public content from Steam communities, Reddit, YouTube comments, and overseas player discussions to understand concerns around game tools, subscriptions, one-time payment, discounts, and feature clarity.",
+          "Analyzed overseas game tools, subscription products, digital-content stores, and membership services, focusing on first-screen hierarchy, value explanation, pricing anchors, trust signals, payment entry points, and user-review placement.",
+          "Produced redesign prototypes and PRDs with Axure, Figma, and MockingBot, splitting membership benefits, product ordering, core entries, price display, and multilingual copy structure into concrete requirements.",
+          "Presented competitive research, redesign demos, and iteration plans to UI/UX and engineering teams. The proposal was recognized by supervisors and the CEO, then entered the follow-up roadmap.",
           "After implementation, store conversion improved within one month: returning-user repurchase rate +1.7%, organic purchase rate +4.9%, and first-time registered purchase rate +13%."
         ]
       },
@@ -48,12 +48,12 @@ export const portfolioDataEn: PortfolioData = {
         role: "AI Product Manager Intern",
         period: "2025.06 - 2025.11",
         summary:
-          "Participated in an AI companion toy project for smart cockpit scenarios, exploring how emotional companionship can move from desktop AI devices into the in-car environment.",
+          "Participated in early research for an AI companion toy in smart cockpit scenarios, studying how desktop AI companionship changes when moved into an in-car environment.",
         details: [
-          "Analyzed 13 desktop companion robots and AI toy products across sensor response, VUI interaction, physical motion feedback, emotional expression, and interaction rhythm.",
-          "Organized 200+ interaction cases for product testing and functional discussions, helping the team compare embodied feedback patterns across products.",
+          "Analyzed 13 desktop companion robots and AI toy products across sensor response, VUI interaction, physical feedback, emotional expression, and interaction rhythm.",
+          "Organized 200+ interaction cases to support product testing and discussions around embodied feedback patterns.",
           "Mapped basic flows for driving emotion relief, child companionship, and in-car conversation, including trigger condition, AI perception, voice feedback, physical action, and user confirmation.",
-          "Built a practical understanding of AI hardware, multimodal interaction, embodied interaction, and emotional companionship products in smart cockpit scenarios."
+          "Built a practical understanding of AI hardware, multimodal interaction, embodied interaction, and emotional companionship products."
         ]
       }
     ],
@@ -70,6 +70,14 @@ export const portfolioDataEn: PortfolioData = {
         items: ["Requirement Analysis", "Competitive Research", "User Journey Design", "Information Architecture", "PRD", "MVP Design", "Version Planning"]
       },
       {
+        title: "International Product",
+        items: ["Overseas Research", "Localization-aware UX", "GTM Basics", "Multi-market Adaptation", "User Feedback Analysis"]
+      },
+      {
+        title: "Growth & Data",
+        items: ["Conversion Funnel", "User Behavior Analysis", "A/B Testing", "Monetization Optimization", "Excel", "Basic SQL"]
+      },
+      {
         title: "AI-Native Workflow",
         items: ["Claude Code", "Codex", "Cursor", "AI-assisted Prototyping", "Development Briefs", "Requirement Breakdown", "Experience Acceptance"]
       },
@@ -79,23 +87,23 @@ export const portfolioDataEn: PortfolioData = {
       },
       {
         title: "Domain Exposure",
-        items: ["Tool Products", "Creator Tools", "Game Tool Products", "Internationalization", "Localization Basics"]
+        items: ["AI Tools", "Creator Tools", "Game Tool Products", "Internationalization", "Localization"]
       }
     ]
   },
   paradigm: {
-    title: "AI-Native Working Method",
-    subtitle: "I treat AI coding as structured collaboration, not one-shot code generation.",
+    title: "AI-Native Product Execution",
+    subtitle: "I use AI coding as a structured product workflow, not a one-shot prompt.",
     description:
-      "In independent projects, I use PRDs, development briefs, component boundaries, acceptance criteria, handoff documents, and Git repository management to guide models. The point is not asking AI to write more code. The point is putting it in the right context to make the right decisions.",
+      "In independent projects, I use PRDs, development briefs, component boundaries, acceptance criteria, handoff documents, and Git repository management to guide models from product definition to front-end validation.",
     features: [
       {
         title: "Context Boundaries",
-        description: "Define what the model should read and what it must not change, reducing architecture drift, visual inconsistency, and repeated rework."
+        description: "Define what the model should read, what it can change, and what must stay fixed, reducing architecture drift and repeated rework."
       },
       {
-        title: "From PRD to Release",
-        description: "Break requirements into components and acceptance criteria, then guide Claude Code, Codex, and Cursor through implementation, review, and iteration."
+        title: "From PRD to Review",
+        description: "Break requirements into screens, components, and acceptance criteria, then guide Claude Code, Codex, and Cursor through implementation and UX iteration."
       }
     ]
   },
@@ -103,66 +111,314 @@ export const portfolioDataEn: PortfolioData = {
     pianke: {
       tag: "Highlight Project",
       title: "Pianke",
-      subtitle: "AI-Native Creator Image Processing Tool",
+      subtitle: "AI-Native Creator Image Tool",
       role: "Independent Product Project · WeChat Mini Program Launched",
       period: "2026.03 - Present",
       description:
-        "Pianke helps ordinary users quickly turn photos into cards, posters, diary images, and shareable visual content. It is not a general photo editor. It is a lightweight creation path built around high-quality templates, direct editing, and fast export.",
+        "A lightweight image-template editor for ordinary users and casual creators. The product shifted from an early photography site direction into high-quality visual templates, lightweight editing, and fast export for shareable content.",
       logoText: "Pk",
       link: "https://cocacolin123.github.io/taobao-ai-demo/",
       stats: [
-        { value: "30MB", label: "Mini Program package constraint" },
-        { value: "6+", label: "Template capabilities" },
-        { value: "0", label: "Account dependency" }
+        { value: "01", label: "Personal site to template editor" },
+        { value: "02", label: "Upload, choose, edit, preview, export" },
+        { value: "03", label: "Quality and export first" }
       ],
       shots: {
-        hero: `${BASE}images/pianke/template-picker.png`,
-        phone: `${BASE}images/pianke/ratio-editor.png`,
-        secondary: `${BASE}images/pianke/garden-film-collage.png`,
+        hero: `${BASE}images/pianke/modules/home-template-selector.png`,
+        phone: `${BASE}images/pianke/modules/home-template-selector.png`,
+        secondary: `${BASE}images/pianke/modules/creative-border-camera-output.png`,
         gallery: [
-          { src: `${BASE}images/pianke/template-picker.png`, alt: "Pianke template picker", height: 1040 },
-          { src: `${BASE}images/pianke/ratio-editor.png`, alt: "Pianke ratio editor", height: 1347 },
-          { src: `${BASE}images/pianke/star-motion.png`, alt: "Pianke star motion template", height: 1347 },
-          { src: `${BASE}images/pianke/heart-motion.png`, alt: "Pianke heart motion template", height: 1347 },
-          { src: `${BASE}images/pianke/camera-card.png`, alt: "Pianke camera parameter card", height: 1040 },
-          { src: `${BASE}images/pianke/garden-film-collage.png`, alt: "Pianke garden film collage template", height: 1347 }
+          { src: `${BASE}images/pianke/modules/home-template-selector.png`, alt: "Pianke home template selector", height: 1040 },
+          { src: `${BASE}images/pianke/template-picker.png`, alt: "Pianke template selector", height: 1040 },
+          { src: `${BASE}images/pianke/camera-card.png`, alt: "Pianke creative border camera card", height: 900 },
+          { src: `${BASE}images/pianke/garden-film-collage.png`, alt: "Pianke garden film collage", height: 900 },
+          { src: `${BASE}images/pianke/palette-glass.png`, alt: "Pianke eyedropper glass view", height: 820 },
+          { src: `${BASE}images/pianke/modules/window-reversal-pulse.gif`, alt: "Pianke window reversal motion template", height: 360 },
+          { src: `${BASE}images/pianke/modules/export-result.png`, alt: "Pianke export completion page", height: 1161 }
         ]
       },
       showcase: {
-        eyebrow: "Template Layers",
-        title: "A real editor unfolded into product evidence",
+        eyebrow: "Visual Archive",
+        title: "Additional samples",
         description:
-          "The screenshots come from one editing chain: ratio control, motion templates, camera cards, and film collage layouts. They show the product surface, not a disconnected template catalog."
+          "A small selection of reusable assets, kept to show template range after the main story."
+      },
+      templateBoard: {
+        eyebrow: "Pianke Studio",
+        title: "From photo to publishable content.",
+        description:
+          "The samples show how templates reduce decisions, how color comes from the photo, and how short loops extend sharing formats.",
+        modules: [
+          {
+            id: "entry-frame",
+            label: "01 / Entry & Creative Border",
+            title: "The entry gives users a clear output direction first.",
+            description:
+              "The template selector reduces first-step decisions. Creative Border combines the photo, device parameters, and scene mood into one shareable output.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/home-template-selector.png`,
+                alt: "Pianke home template selector",
+                height: 1040,
+                caption: "The entry answers what the photo can become.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-editor.png`,
+                alt: "Pianke creative border template editor",
+                height: 1161,
+                caption: "Templates, effects, elements, and components stay in one editing path.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-camera-output.png`,
+                alt: "Pianke creative border camera parameter output",
+                height: 792,
+                caption: "Device context supports the photo, not the other way around.",
+                frame: "wide"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-dark-output.png`,
+                alt: "Pianke creative border place poster output",
+                height: 787,
+                caption: "Location, device information, and mood form a finished poster.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/camera-card.png`,
+                alt: "Pianke creative border camera card",
+                height: 900,
+                caption: "The camera card keeps brand identity and parameter language.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/template-picker.png`,
+                alt: "Pianke template picker",
+                height: 1040,
+                caption: "Template selection leads into lightweight editing.",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "Direction first.",
+              "Fewer choices."
+            ]
+          },
+          {
+            id: "moment-card",
+            label: "02 / Moment Card",
+            title: "Place, date, and photo become a lightweight memory card.",
+            description:
+              "Moment Card turns an arrival, walk, or trip into a stable sharing format. Place and date provide context. The photo carries emotion.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/moment-card-park-editor.png`,
+                alt: "Pianke Hupao Park moment card editor",
+                height: 1154,
+                caption: "Material and glow controls shape the atmosphere.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/moment-card-zoo-editor.png`,
+                alt: "Pianke Shanghai Zoo moment card editor",
+                height: 1154,
+                caption: "Deep greens and grain hold the scene mood.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/moment-card-editor.png`,
+                alt: "Pianke Longhua Temple moment card editor",
+                height: 1161,
+                caption: "Date, place, and image stay in a clear hierarchy.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/ratio-editor.png`,
+                alt: "Pianke moment card ratio editor",
+                height: 900,
+                caption: "Ratio controls the split between image and color blocks.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/ratio-editor-dark.png`,
+                alt: "Pianke dark moment card ratio editor",
+                height: 900,
+                caption: "The same structure can carry a different mood.",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "Clear context.",
+              "Stable structure."
+            ]
+          },
+          {
+            id: "window-reversal",
+            label: "03 / Window Reversal",
+            title: "Static templates extend into one-to-two-second loops.",
+            description:
+              "Window Reversal validates short-motion templates without introducing a heavy timeline editor. Preset motion makes ornaments usable for social sharing.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/star-motion.png`,
+                alt: "Pianke window reversal star template",
+                height: 900,
+                caption: "Star ornaments fit lightweight social content.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/heart-motion.png`,
+                alt: "Pianke window reversal heart template",
+                height: 900,
+                caption: "Heart ornaments add emotional rhythm.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/window-reversal-grow.gif`,
+                alt: "Pianke window reversal grow motion",
+                height: 227,
+                caption: "Preset motion lowers editing cost.",
+                frame: "motionWide"
+              },
+              {
+                src: `${BASE}images/pianke/modules/window-reversal-pulse.gif`,
+                alt: "Pianke window reversal pulse motion",
+                height: 360,
+                caption: "Short loops give the output a clear beat.",
+                frame: "motionTall"
+              }
+            ],
+            points: [
+              "Preset motion.",
+              "Direct preview."
+            ]
+          },
+          {
+            id: "garden-film",
+            label: "04 / Garden Film",
+            title: "A photo set becomes one page with a clear viewing order.",
+            description:
+              "Garden Film organizes related photos into one page, suitable for travel, diary, and observation scenarios where sequence matters.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/garden-film-collage.png`,
+                alt: "Pianke garden film collage one",
+                height: 900,
+                caption: "Multiple photos become one continuous page.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/forest-film-collage.png`,
+                alt: "Pianke garden film collage two",
+                height: 900,
+                caption: "Film borders organize viewing order.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/film-collage.png`,
+                alt: "Pianke garden film collage three",
+                height: 900,
+                caption: "The collage turns a photo set into one work.",
+                frame: "poster"
+              }
+            ],
+            points: [
+              "One photo set.",
+              "One finished work."
+            ]
+          },
+          {
+            id: "color-system",
+            label: "05 / Eyedropper & Palette",
+            title: "Color comes from the photo, lowering styling cost.",
+            description:
+              "The eyedropper pulls colors from the photo, then applies them to ornaments, borders, masks, and text so the style has a source.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/eyedropper-zoom.png`,
+                alt: "Pianke eyedropper zoom interface",
+                height: 395,
+                caption: "The zoomed picker confirms the color source.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/universal-palette-panel.png`,
+                alt: "Pianke universal palette and eyedropper panel",
+                height: 1154,
+                caption: "The palette unifies template element colors.",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/palette-glass.png`,
+                alt: "Pianke eyedropper glass view",
+                height: 820,
+                caption: "Color extraction starts from the photo itself.",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/sampled-palette-output.png`,
+                alt: "Pianke sampled palette output",
+                height: 625,
+                caption: "A color set can also become shareable content.",
+                frame: "poster"
+              }
+            ],
+            points: [
+              "Source-based color.",
+              "Unified style."
+            ]
+          },
+          {
+            id: "export",
+            label: "06 / Export",
+            title: "The export page gives the workflow a clear ending.",
+            description:
+              "Preview, download, save, and return home are gathered on one screen, keeping the MVP focused on a stable finish state.",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/export-result.png`,
+                alt: "Pianke export completion page",
+                height: 1161,
+                caption: "The completion page closes the download and save loop.",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "Clear closure.",
+              "Stable path."
+            ]
+          }
+        ]
       },
       features: [
         {
-          step: "01 / Repositioning",
-          title: "Users do not lack photo editors. They lack a lightweight publishing path.",
+          step: "01 / Output Path",
+          title: "Validate whether a photo can become publishable content quickly.",
           description:
-            "Based on student interviews, questionnaires, and social media content observation, Pianke moved from an early photography portfolio direction into an AI-assisted image template editor.",
+            "The core flow is upload, choose template, edit text and style, preview, then export for sharing.",
           details: [
-            "The core insight was that ordinary users already have tools for taking and retouching photos, but still need a faster way to package images into publishable visual outputs.",
-            "Instead of competing with Xingtu or Canva on high-freedom canvas editing, Pianke uses high-quality templates to reduce aesthetic decisions and accelerate publishing."
+            "Users see the output direction before entering the editor.",
+            "Templates reduce aesthetic decisions for ordinary users and casual creators."
           ]
         },
         {
-          step: "02 / Reusable Editing Base",
-          title: "The main workflow is upload, choose template, edit, preview, export.",
+          step: "02 / Memory Format",
+          title: "Turn scattered photos into repeatable content formats.",
           description:
-            "Image upload, text editing, style configuration, template preview, and export were abstracted into reusable capabilities, supporting moment cards, posters, creative borders, and Paper Mount layouts.",
+            "Moment Card handles one arrival. Garden Film handles a sequence. Both are configurable template units.",
           details: [
-            "Templates are configurable editing units rather than one-off pages: image slots, text slots, colors, ratios, decorations, and export parameters are pushed into data structures.",
-            "This makes solo iteration realistic. New templates can be added without rebuilding the entire editor each time."
+            "Image, text, color, ratio, and ornaments all serve the final output.",
+            "Template configuration lets new outputs reuse upload, editing, preview, and export capabilities."
           ]
         },
         {
-          step: "03 / MVP Scoping",
-          title: "Postpone accounts and free canvas editing. Prioritize output quality.",
+          step: "03 / Color and Motion",
+          title: "Scope the MVP around output quality before feature volume.",
           description:
-            "Under no-backend, solo-development, and WeChat Mini Program constraints, the MVP only keeps the capabilities needed to validate sharing value: template quality, clear editing paths, and export experience.",
+            "Under no-backend, solo-development, and Mini Program constraints, accounts, complex asset libraries, and freeform canvas editing were intentionally postponed.",
           details: [
-            "Account systems, complex asset libraries, and high-freedom canvas editing were intentionally postponed because they consume package size and development time before proving user demand.",
-            "The priority is clear: first prove the output looks good, the editing flow feels smooth, and export is stable. Heavier community and asset systems can come later."
+            "The priority is template quality, clear editing paths, and stable export.",
+            "Short-motion templates use presets first, instead of expanding into a full video editor."
           ]
         }
       ]
@@ -172,7 +428,12 @@ export const portfolioDataEn: PortfolioData = {
       subtitle: "Local Private Archive",
       role: "Local personal archive tool",
       description:
-        "A local tool that treats private diaries as editorial archives. It is not cloud notes, not a blog CMS, and not an AI writing assistant.",
+        "A local archive tool for private writing, retrieval, and long-term review. It treats diary entries as durable personal records, not disposable notes.",
+      live: {
+        href: "https://cocacolin123.github.io/Dariy-/",
+        label: "Open public demo",
+        note: "This is a demo, not the final production product. The public entry uses sample text to show timeline, management, and AI-assisted flows without exposing private diary data."
+      },
       shots: {
         cover: `${BASE}images/diary/cover.png`,
         timeline: `${BASE}images/diary/timeline.png`
@@ -187,27 +448,27 @@ export const portfolioDataEn: PortfolioData = {
         {
           title: "Files as source of truth",
           description:
-            "Entries are stored as local Markdown files and archived by year and month. Even if the software disappears, the diary remains readable."
+            "Entries are stored as local Markdown files and archived by year and month. Even if the tool stops being maintained, the writing remains readable."
         },
         {
           title: "111 real entries drive classification",
           description:
-            "The taxonomy was not invented from scratch. It came from annotating real diary entries into 5 dimensions and 12 tags, with empty labels preserved when evidence was insufficient."
+            "The taxonomy came from annotating real diary entries into 5 dimensions and 12 tags, with empty labels preserved when evidence was insufficient."
         },
         {
           title: "Magazine-style timeline",
           description:
-            "The list is not a table or card wall. It is a vertical timeline where short quotes, long leads, wide cards, and first-entry styling create reading rhythm."
+            "The vertical timeline uses short quotes, long leads, and wide cards to create reading rhythm instead of a generic table or card wall."
         },
         {
-          title: "The welcome page is a ritual",
+          title: "A restrained opening",
           description:
-            "The first screen shows today's date and a greeting instead of a dashboard. Background color temperature changes with time, so different days feel different."
+            "The first screen shows date and greeting before statistics, reminding users this is a private archive rather than an operations dashboard."
         },
         {
-          title: "Clear anti-scope",
+          title: "Clear product boundaries",
           description:
-            "It is not a generic dark dashboard, glassmorphism shell, collaborative document, blog CMS, or Word clone. Each no protects the product from scope creep."
+            "The project avoids collaboration, CMS, and Word-like editing scope, staying focused on local writing, archiving, and review."
         }
       ]
     },
@@ -216,8 +477,13 @@ export const portfolioDataEn: PortfolioData = {
       subtitle: "Personal Photo World",
       role: "Personal photography archive",
       description:
-        "A photography world that treats photos as objects to be looked at, not a list to be browsed.",
+        "A personal photography site for organizing images, browsing chapters, and viewing photos in an immersive environment.",
       quote: "The site should feel like a night walk through a personal archive.",
+      live: {
+        href: "https://cocacolin123.github.io/Colin-Photo/",
+        label: "Open photography site",
+        note: "This is a demo, not the final production product. The public entry shows the viewing path, chapter structure, and immersive browsing experience."
+      },
       shots: {
         landing: `${BASE}images/photo/landing.png`,
         album: `${BASE}images/photo/album.png`,
@@ -225,11 +491,11 @@ export const portfolioDataEn: PortfolioData = {
         journal: `${BASE}images/photo/journal.png`,
         kingdom: `${BASE}images/photo/kingdom.png`
       },
-      focusNote: "Press Esc to return to darkness. Use arrow keys to move through light. In this environment, the photograph is the only light source.",
+      focusNote: "Press Esc to return to the page and use arrow keys to move between images. The interaction stays quiet so the photo can lead.",
       pages: [
         { label: "Landing", text: "A cover moment that sets the mood" },
         { label: "Works", text: "Curated chapters with images first" },
-        { label: "Album", text: "Context on the left, photographs on the right" },
+        { label: "Album", text: "Context and photographs side by side" },
         { label: "Lightbox", text: "Keyboard, Escape, and swipe gestures" },
         { label: "Journal", text: "Personal writing with dates" }
       ],
@@ -237,41 +503,41 @@ export const portfolioDataEn: PortfolioData = {
         {
           title: "Photography is the lead. UI is support.",
           description:
-            "Effects must support image viewing rather than compete with it. Any design that makes users notice the interface before the photo is wrong."
+            "Effects and controls support viewing instead of competing with the image."
         },
         {
           title: "Darkness is a viewing room",
           description:
-            "The dark surface is not pure black decoration. It is a cool-toned room built to make photo details visible."
+            "The dark surface acts as a cool-toned viewing room, making photo details and contrast more visible."
         },
         {
           title: "Controlled brand voice",
           description:
-            "The copy stays quiet, observational, and intimate. No marketing language, metric theater, or over-explaining."
+            "The copy stays quiet, observational, and personal, avoiding marketing language and over-explaining."
         },
         {
           title: "Anti-reference matters",
           description:
-            "Not a template card grid, not gear-first, not blog-first. The About page is not a resume, and the Journal avoids comments and overloaded tags."
+            "It is not a gear site or blog list. The structure is built for viewing rather than information dumping."
         },
         {
           title: "Five pages, five jobs",
           description:
-            "Landing, Works, Album, Lightbox, and Journal each handle mood, curation, context, immersive viewing, and personal writing."
+            "Landing, Works, Album, Lightbox, and Journal handle mood, curation, context, immersive viewing, and writing."
         }
       ]
     }
   },
   footer: {
-    quoteTitle: "I want fewer loose pages and more usable tools.",
+    quoteTitle: "I want product judgment to become real experience.",
     quote:
-      "A tool should not feel like a pile of features. A good tool lets users forget the interface and feel their ideas landing faster in the real world.",
+      "This site is not only a portfolio display. It connects my resume, product method, AI-native workflow, and independent projects into something recruiters can actually open and inspect.",
     links: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume-en.pdf` },
       { label: "Language Gate", href: "#/" }
     ],
     copyright: "Designed & Built by Colin L. © 2026",
-    tagline: "AI Product Manager · Creative Technologist"
+    tagline: "AI Tools · International Product · Growth"
   }
 };

@@ -44,24 +44,24 @@ const floatingShots: FloatingShot[] = [
 
 const proofItems: ProofItem[] = [
   {
-    label: "01 / Pianke",
-    title: "Template editor shipped as a Mini Program",
-    metric: "30MB · 6+ templates · 0 account dependency",
-    summary: "A lightweight path from image upload to shareable cards, posters, diary images, and film collages.",
+    label: "01 / 片刻",
+    title: "用产品媒体展示的 AI 创作者工具",
+    metric: "30MB · 6+ 模板 · 0 账户依赖",
+    summary: "从图片上传到卡片、海报、日记图和胶片拼贴的轻量创作路径。出于安全边界，公开入口会以图片和短视频演示为主。",
     images: [`${BASE}images/pianke/ratio-editor.png`, `${BASE}images/pianke/garden-film-collage.png`]
   },
   {
-    label: "02 / Diary Vault",
-    title: "Private archive shaped by 111 real entries",
-    metric: "5 dimensions · 12 tags · local Markdown",
-    summary: "A paper-first local diary system with archive logic, editorial rhythm, and deliberate anti-scope.",
+    label: "02 / 日记库",
+    title: "由 111 篇真实日记塑形的私人档案",
+    metric: "5 个维度 · 12 个标签 · 本地 Markdown",
+    summary: "纸张优先的本地日记系统，围绕归档逻辑、编辑节奏和明确的范围取舍展开。",
     images: [`${BASE}images/diary/cover.png`, `${BASE}images/diary/timeline.png`]
   },
   {
-    label: "03 / Photography",
-    title: "A viewing room for personal photographs",
-    metric: "5 pages · darkroom surface · focus mode",
-    summary: "A photo site where the interface recedes and the photographs become the only light source.",
+    label: "03 / 摄影集",
+    title: "一个观看个人照片的暗房",
+    metric: "5 个页面 · 暗房界面 · 专注观看",
+    summary: "让界面退后、让照片成为唯一光源的个人摄影站。",
     images: [`${BASE}images/photo/landing.png`, `${BASE}images/photo/kingdom.png`]
   }
 ];
@@ -126,7 +126,7 @@ export const LanguageGate: React.FC = () => {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-3.5rem)] max-w-7xl flex-col gap-10">
         <header className="flex flex-col gap-4 border-b border-ink/20 pb-5 md:flex-row md:items-center md:justify-between">
-          <p className="font-serif-en text-xs uppercase tracking-[0.28em] text-neutral-500">Work Collection · 2026</p>
+          <p className="font-serif-en text-xs uppercase tracking-[0.28em] text-neutral-500">Personal Site · 2026</p>
           <a
             href="mailto:l15225585490@163.com"
             className="w-fit border border-ink/15 bg-[#f7f5f0]/80 px-3 py-2 font-sans-zh text-xs uppercase tracking-[0.18em] text-neutral-600 transition-colors hover:bg-ink hover:text-[#f7f5f0]"
@@ -139,25 +139,25 @@ export const LanguageGate: React.FC = () => {
           <div>
             <p className="mb-7 font-serif-en text-xs uppercase tracking-[0.28em] text-[#536b35]">Choose a language</p>
             <h1 className="font-serif-zh text-[clamp(3rem,10vw,8rem)] font-black leading-[0.98]">
-              Pei Long Liu
+              刘沛龙
             </h1>
             <p className="mt-7 max-w-3xl font-sans-zh text-lg leading-9 text-neutral-700 md:text-xl">
-              同一组产品经历和作品项目，两种表达方式。中文保留本土语境，英文对应英文简历和海外团队阅读习惯。
+              这是刘沛龙的个人站点，承载我正在推进的产品项目、摄影观看、日记档案与 AI-Native 创作方法。希望来访者能从真实入口进入作品现场，而不是只读一份简历：看见问题如何被拆解，内容如何被组织，想法如何被做成可使用的工具。
             </p>
             <nav className="mt-8 grid gap-3 lg:hidden">
               <LanguageEntry
                 href="#/zh"
-                eyebrow="Chinese Portfolio"
-                title="中文作品集"
-                body="面向中文招聘和本土产品语境，保留片刻、日记库、摄影集的完整项目叙事。"
-                cta="Enter Chinese"
+                eyebrow="中文入口"
+                title="中文站点"
+                body="面向中文招聘和本土产品语境，保留片刻、日记库、摄影集的完整项目叙事与真实入口。"
+                cta="进入中文站点"
               />
               <LanguageEntry
                 href="#/en"
-                eyebrow="English Portfolio"
+                eyebrow="English Entry"
                 title="English"
-                body="Aligned with the English resume and overseas reading habits."
-                cta="Enter English"
+                body="For English resume review and overseas reading habits, with live project evidence where public access is appropriate."
+                cta="Enter English Site"
               />
             </nav>
           </div>
@@ -187,17 +187,17 @@ export const LanguageGate: React.FC = () => {
         <nav className="mt-auto hidden gap-4 pb-5 lg:grid lg:grid-cols-2">
           <LanguageEntry
             href="#/zh"
-            eyebrow="Chinese Portfolio"
-            title="中文作品集"
-            body="面向中文招聘和本土产品语境，保留片刻、日记库、摄影集的完整项目叙事。"
-            cta="Enter Chinese"
+            eyebrow="中文入口"
+            title="中文站点"
+            body="面向中文招聘和本土产品语境，保留片刻、日记库、摄影集的完整项目叙事与真实入口。"
+            cta="进入中文站点"
           />
           <LanguageEntry
             href="#/en"
-            eyebrow="English Portfolio"
+            eyebrow="English Entry"
             title="English"
-            body="Aligned with the English resume: AI product internship experience, tool-product thinking, and launchable portfolio projects."
-            cta="Enter English"
+            body="For English resume review and overseas reading habits, with live project evidence where public access is appropriate."
+            cta="Enter English Site"
           />
         </nav>
       </div>

@@ -40,6 +40,26 @@ type GalleryShot = {
   height: number;
 };
 
+type PiankeTemplateShot = GalleryShot & {
+  caption: string;
+  frame: "phone" | "wide" | "poster" | "motionWide" | "motionTall";
+};
+
+type PiankeTemplateModule = {
+  id: string;
+  label: string;
+  title: string;
+  description: string;
+  shots: PiankeTemplateShot[];
+  points: string[];
+};
+
+type LiveEntry = {
+  href: string;
+  label: string;
+  note: string;
+};
+
 export type PortfolioData = {
   hero: {
     eyebrow: string;
@@ -92,6 +112,12 @@ export type PortfolioData = {
         title: string;
         description: string;
       };
+      templateBoard: {
+        eyebrow: string;
+        title: string;
+        description: string;
+        modules: PiankeTemplateModule[];
+      };
       features: PiankeFeature[];
     };
     diary: {
@@ -99,6 +125,7 @@ export type PortfolioData = {
       subtitle: string;
       role: string;
       description: string;
+      live: LiveEntry;
       shots: {
         cover: string;
         timeline: string;
@@ -116,6 +143,7 @@ export type PortfolioData = {
       role: string;
       description: string;
       quote: string;
+      live: LiveEntry;
       shots: {
         landing: string;
         album: string;
@@ -142,22 +170,22 @@ export type PortfolioData = {
 
 export const portfolioData: PortfolioData = {
   hero: {
-    eyebrow: "Personal Digital Portfolio · 2026",
-    mainTitle: "把产品想法",
-    mainTitleEmphasis: "做成真实可用的工具",
+    eyebrow: "个人站点 / 产品作品集 · 2026",
+    mainTitle: "把需求判断",
+    mainTitleEmphasis: "落到可验证产品",
     name: "刘沛龙",
-    role: "AI 产品经理 / 工具产品方向",
-    location: "19岁 · 上海 · 随时到岗",
+    role: "产品经理实习生｜AI 产品 / 工具产品 / 增长转化",
+    location: "上海 · 随时到岗 · 可稳定实习 6 个月",
     intro:
-      "我关注工具产品、创作者工具和 AI-Native 工作流。能从需求分析、竞品拆解、信息架构、PRD 到前端原型实现，把一个模糊想法推进到可以被真实用户打开和使用的版本。",
+      "我关注 AI 产品、工具产品和增长转化。能从用户研究、场景拆解、竞品分析、信息架构、PRD 到原型和前端验证，把问题判断推进到可体验、可评审、可迭代的产品版本。",
     contact: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
       { label: "English", href: "#/en" }
     ],
     facts: [
-      { value: "13%", label: "3DM 首次注册下单率提升" },
-      { value: "111", label: "真实日记样本驱动分类" },
+      { value: "13%", label: "首次注册下单率提升" },
+      { value: "200+", label: "AI 陪伴交互 Case 拆解" },
       { value: "6+", label: "片刻模板能力落地" }
     ]
   },
@@ -171,12 +199,12 @@ export const portfolioData: PortfolioData = {
         role: "产品经理实习生",
         period: "2025.12 - 2026.05",
         summary:
-          "参与风灵月影 App 桌面端商城优化，从转化数据拆解问题，重构会员权益表达、商品排序和首屏路径。改版落地后，自然下单率提升 4.9%，首次注册下单率提升 13%，验证了权益强化、IP 信任背书和商城路径重构的组合判断。",
+          "参与风灵月影相关产品线桌面端商城优化，围绕首次注册下单率、自然下单率和老客复购率偏低的问题，拆解从进入商城、理解权益到完成下单的核心路径。改版落地后 1 个月，老客复购率 +1.7%，自然下单率 +4.9%，首次注册下单率 +13%。",
         details: [
-          "独立拆解同类游戏工具、会员体系和工具型商城产品，重点比较首页信息架构、会员权益展示、付费入口、商城排序和转化路径。",
-          "用 Axure、Figma、墨刀产出页面改版原型，把“降低理解成本、强化付费理由、提升页面冲击力”拆成可评审的界面方案。",
-          "维护页面优化需求池，将信息架构调整、会员权益强化、商城排序、视觉层级改版和本地化适配预留拆成两阶段迭代。",
-          "在组会上讲解竞品分析、改版 Demo 和迭代路线，方案获得上级及 CEO 认可，并写入后续迅捷迭代 Roadmap。"
+          "对比新老用户下单表现，判断新用户主要卡在权益感知不足、付费理由不清晰和首屏理解成本较高。",
+          "独立完成同类游戏工具、会员体系和工具型商城竞品调研，拆解信息架构、权益展示、付费入口、商品排序和转化路径。",
+          "用 Axure、Figma、墨刀输出商城改版原型和 PRD，围绕“降低理解成本、强化付费理由、提升视觉冲击力”重构页面层级。",
+          "维护优化需求池，将信息架构、会员权益、商城排序和视觉层级拆成可推进的迭代模块，并在组会上讲解方案。"
         ]
       },
       {
@@ -185,11 +213,11 @@ export const portfolioData: PortfolioData = {
         role: "AI 产品经理实习生",
         period: "2025.06 - 2025.11",
         summary:
-          "参与车载情绪化陪伴 AI 玩偶产品，把桌面端陪伴体验迁移到智能座舱语境下重新拆解。围绕驾驶情绪安抚、儿童陪伴和车内闲聊场景，整理 13 款竞品与 200+ 交互 Case，辅助团队明确车载 AI 硬件的感知与反馈链路。",
+          "参与车载情绪化陪伴 AI 玩偶早期产品研究，理解桌面端 AI 陪伴体验迁移到智能座舱时，在使用场景、交互时机、反馈方式和打扰感控制上的差异。",
         details: [
-          "从传感器响应、VUI 语音交互、实体动作反馈、情绪表达、人机互动节奏等维度建立竞品样本库。",
-          "把车内场景拆成“触发条件、AI 感知、语音反馈、实体动作、用户确认”的链路，帮助团队区分桌面陪伴和座舱陪伴的关键差异。",
-          "重点观察用户在驾驶疲劳、情绪波动、儿童陪伴和低强度闲聊下对 AI 反馈节奏的容忍度，避免把玩具式互动直接搬进车内。",
+          "拆解 13 款桌面陪伴机器人与 AI 玩偶类竞品，从传感器响应、VUI 语音交互、实体动作反馈、情绪表达和互动节奏整理 200+ 交互 Case。",
+          "围绕驾驶情绪安抚、儿童陪伴和车内闲聊，梳理“触发条件、AI 感知、语音反馈、实体动作、用户确认”的基础链路。",
+          "重点关注车内反馈的时机、拟人化表达和打扰感控制，避免把桌面玩具式互动直接搬入驾驶场景。",
           "这段经历让我建立了对 AI 硬件、多模态交互和智能座舱情绪陪伴产品的基础判断。"
         ]
       }
@@ -206,6 +234,10 @@ export const portfolioData: PortfolioData = {
         items: ["需求分析", "竞品研究", "用户路径设计", "信息架构", "PRD", "MVP 设计", "版本规划"]
       },
       {
+        title: "增长数据",
+        items: ["转化漏斗", "用户行为分析", "A/B 测试", "商业化转化优化", "数据复盘", "Excel", "SQL 基础"]
+      },
+      {
         title: "AI-Native 工作流",
         items: ["Claude Code", "Codex", "Cursor", "开发简报", "需求拆解", "体验验收", "Handoff 文档"]
       },
@@ -215,23 +247,23 @@ export const portfolioData: PortfolioData = {
       },
       {
         title: "领域积累",
-        items: ["工具产品", "创作者工具", "游戏工具产品", "国际化与本地化基础认知"]
+        items: ["AI 产品", "工具产品", "创作者工具", "游戏工具产品", "国际化与本地化基础"]
       }
     ]
   },
   paradigm: {
     title: "工作范式",
-    subtitle: "把 AI Coding 当作结构化协作，而不是一次性代码生成。",
+    subtitle: "用 AI 辅助完成从产品定义到前端验证的闭环。",
     description:
-      "在独立项目里，我用 PRD、开发简报、组件边界、验收标准、Handoff 文档和 Git 仓库管理来约束模型。重点不是让 AI 多写代码，而是让它在正确的上下文里做正确的事。",
+      "在独立项目里，我用 PRD、开发 Brief、组件边界、验收标准、Handoff 文档和 Git 仓库管理约束模型。重点不是让 AI 多写代码，而是把需求拆清楚，让它在正确上下文里完成原型、实现、修正和验收。",
     features: [
       {
         title: "上下文边界",
-        description: "给模型明确阅读范围和不可修改区域，减少架构误读、样式漂移和反复返工。"
+        description: "先规定阅读范围、组件边界和不可修改区域，降低架构误读、样式漂移和反复返工。"
       },
       {
-        title: "从 PRD 到上线",
-        description: "把需求拆到组件和验收标准，再驱动 Claude Code、Codex、Cursor 进入各自擅长的实现环节。"
+        title: "从 PRD 到验收",
+        description: "把需求拆到界面、组件和验收标准，再驱动 Claude Code、Codex、Cursor 完成实现和体验修正。"
       }
     ]
   },
@@ -239,66 +271,314 @@ export const portfolioData: PortfolioData = {
     pianke: {
       tag: "Highlight Project",
       title: "片刻",
-      subtitle: "Pianke Editor",
+      subtitle: "AI-Native 创作者图片处理工具",
       role: "独立产品项目 · 微信小程序上线",
       period: "2026.03 - 至今",
       description:
-        "AI-Native 创作者图片处理工具。它不是泛用修图软件，而是帮助普通用户把照片快速包装成卡片、海报、日记图和分享图的轻量创作路径。",
+        "一个面向普通用户和轻量创作者的图片模板编辑器。项目从早期摄影作品集方向调整为“高质量视觉模板 + 轻量编辑 + 快速导出”，解决照片从拍摄、修图到可发布内容之间的最后一步。",
       logoText: "Pk",
       link: "https://cocacolin123.github.io/taobao-ai-demo/",
       stats: [
-        { value: "30MB", label: "小程序包体约束" },
-        { value: "6+", label: "预制模板能力" },
-        { value: "0", label: "账户依赖" }
+        { value: "定位", label: "从个人建站转向模板编辑" },
+        { value: "链路", label: "上传、选择、编辑、预览、导出" },
+        { value: "MVP", label: "先验证成品质量和导出体验" }
       ],
       shots: {
-        hero: `${BASE}images/pianke/template-picker.png`,
-        phone: `${BASE}images/pianke/ratio-editor.png`,
-        secondary: `${BASE}images/pianke/garden-film-collage.png`,
+        hero: `${BASE}images/pianke/modules/home-template-selector.png`,
+        phone: `${BASE}images/pianke/modules/home-template-selector.png`,
+        secondary: `${BASE}images/pianke/modules/creative-border-camera-output.png`,
         gallery: [
+          { src: `${BASE}images/pianke/modules/home-template-selector.png`, alt: "片刻首页模板选择页", height: 1040 },
           { src: `${BASE}images/pianke/template-picker.png`, alt: "片刻模板选择页", height: 1040 },
-          { src: `${BASE}images/pianke/ratio-editor.png`, alt: "片刻排版比例编辑", height: 1347 },
-          { src: `${BASE}images/pianke/star-motion.png`, alt: "片刻星形动效模板", height: 1347 },
-          { src: `${BASE}images/pianke/heart-motion.png`, alt: "片刻爱心动效模板", height: 1347 },
-          { src: `${BASE}images/pianke/camera-card.png`, alt: "片刻相机参数卡片模板", height: 1040 },
-          { src: `${BASE}images/pianke/garden-film-collage.png`, alt: "片刻花园胶片拼贴模板", height: 1347 }
+          { src: `${BASE}images/pianke/camera-card.png`, alt: "片刻创意边框相机卡", height: 900 },
+          { src: `${BASE}images/pianke/garden-film-collage.png`, alt: "片刻花园胶片拼贴", height: 900 },
+          { src: `${BASE}images/pianke/palette-glass.png`, alt: "片刻取色器放大视图", height: 820 },
+          { src: `${BASE}images/pianke/modules/window-reversal-pulse.gif`, alt: "片刻窗花反转动态模板", height: 360 },
+          { src: `${BASE}images/pianke/modules/export-result.png`, alt: "片刻导出完成页", height: 1161 }
         ]
       },
       showcase: {
-        eyebrow: "Template Layers",
-        title: "真实编辑界面的图层展开",
+        eyebrow: "Visual Archive",
+        title: "补充样张",
         description:
-          "从排版比例、片刻动效、相机参数卡到胶片拼贴，截图对应的是同一条编辑主链路，而不是孤立的模板陈列。"
+          "保留少量旧素材，补充展示模板形态和视觉延展。"
+      },
+      templateBoard: {
+        eyebrow: "Pianke Studio",
+        title: "从照片到可发布内容。",
+        description:
+          "样张展示核心链路：模板如何降低决策成本，颜色如何来自照片，短循环如何扩展分享形式。",
+        modules: [
+          {
+            id: "entry-frame",
+            label: "01 / 入口与创意边框",
+            title: "入口先给用户一个明确的成品方向。",
+            description:
+              "模板选择页降低第一步决策成本，创意边框把照片、设备参数和场景氛围组合成可直接分享的作品。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/home-template-selector.png`,
+                alt: "片刻首页模板选择页",
+                height: 1040,
+                caption: "模板入口先解决“做成什么样”。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-editor.png`,
+                alt: "片刻创意边框模板编辑界面",
+                height: 1161,
+                caption: "编辑页把模板、效果、元素和组件拆成清晰路径。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-camera-output.png`,
+                alt: "片刻创意边框相机参数卡输出",
+                height: 792,
+                caption: "参数层补充设备语境，照片仍然是主体。",
+                frame: "wide"
+              },
+              {
+                src: `${BASE}images/pianke/modules/creative-border-dark-output.png`,
+                alt: "片刻创意边框地点海报输出",
+                height: 787,
+                caption: "场景名、设备信息和照片氛围形成一张纪念图。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/camera-card.png`,
+                alt: "片刻创意边框相机卡",
+                height: 900,
+                caption: "相机卡保留品牌识别和参数表达。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/template-picker.png`,
+                alt: "片刻模板选择页",
+                height: 1040,
+                caption: "从选择模板进入轻量编辑。",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "先给方向。",
+              "少做选择。"
+            ]
+          },
+          {
+            id: "moment-card",
+            label: "02 / 时刻卡",
+            title: "地点、日期和照片组成轻量记忆卡。",
+            description:
+              "时刻卡把一次抵达、一次散步或一次旅行整理成结构稳定的分享图。地点和日期负责语境，照片负责情绪。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/moment-card-park-editor.png`,
+                alt: "片刻虎跑公园时刻卡编辑界面",
+                height: 1154,
+                caption: "材质和泛光控制氛围强度。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/moment-card-zoo-editor.png`,
+                alt: "片刻上海动物园时刻卡编辑界面",
+                height: 1154,
+                caption: "深绿色和噪点承接环境感。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/modules/moment-card-editor.png`,
+                alt: "片刻龙华寺时刻卡编辑界面",
+                height: 1161,
+                caption: "日期、地点和照片形成清晰层级。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/ratio-editor.png`,
+                alt: "片刻时刻卡比例编辑界面",
+                height: 900,
+                caption: "比例控制照片与色块的分配。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/ratio-editor-dark.png`,
+                alt: "片刻深色时刻卡比例编辑界面",
+                height: 900,
+                caption: "同一结构可以承接不同情绪。",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "语境清楚。",
+              "结构稳定。"
+            ]
+          },
+          {
+            id: "window-reversal",
+            label: "03 / 窗花反转",
+            title: "静态模板延展到 1 到 2 秒短循环。",
+            description:
+              "窗花反转验证动态模板方向：不做复杂时间轴，只用预设动效让装饰元素进入短视频分享场景。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/star-motion.png`,
+                alt: "片刻窗花反转星形模板",
+                height: 900,
+                caption: "星形装饰适合轻量社媒内容。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/heart-motion.png`,
+                alt: "片刻窗花反转爱心模板",
+                height: 900,
+                caption: "爱心装饰强化情绪节奏。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/window-reversal-grow.gif`,
+                alt: "片刻窗花反转从零生长动效",
+                height: 227,
+                caption: "预设动效降低编辑成本。",
+                frame: "motionWide"
+              },
+              {
+                src: `${BASE}images/pianke/modules/window-reversal-pulse.gif`,
+                alt: "片刻窗花反转大小跳动动效",
+                height: 360,
+                caption: "短循环给分享内容一个节奏点。",
+                frame: "motionTall"
+              }
+            ],
+            points: [
+              "预设动效。",
+              "直接预览。"
+            ]
+          },
+          {
+            id: "garden-film",
+            label: "04 / 花园胶片",
+            title: "一组照片被组织成连续观看的页面。",
+            description:
+              "花园胶片把多张照片整理成一页，适合旅行、日记和观察记录这类需要顺序感的内容。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/garden-film-collage.png`,
+                alt: "片刻花园胶片拼贴一",
+                height: 900,
+                caption: "多张照片形成连续叙事。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/forest-film-collage.png`,
+                alt: "片刻花园胶片拼贴二",
+                height: 900,
+                caption: "胶片边框组织观看顺序。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/film-collage.png`,
+                alt: "片刻花园胶片拼贴三",
+                height: 900,
+                caption: "拼贴让照片组成为完整作品。",
+                frame: "poster"
+              }
+            ],
+            points: [
+              "一组照片。",
+              "一页作品。"
+            ]
+          },
+          {
+            id: "color-system",
+            label: "05 / 取色器与色板",
+            title: "颜色从照片里来，降低普通用户配色成本。",
+            description:
+              "取色器把照片中的颜色带进模板，再用于图案、边框、遮罩和文字，让风格选择有来源。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/eyedropper-zoom.png`,
+                alt: "片刻取色器放大镜界面",
+                height: 395,
+                caption: "放大镜确认颜色来源。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/universal-palette-panel.png`,
+                alt: "片刻通用色板与吸色器界面",
+                height: 1154,
+                caption: "色板统一模板元素颜色。",
+                frame: "phone"
+              },
+              {
+                src: `${BASE}images/pianke/palette-glass.png`,
+                alt: "片刻取色器玻璃界面",
+                height: 820,
+                caption: "从照片抽色，减少凭空选择。",
+                frame: "poster"
+              },
+              {
+                src: `${BASE}images/pianke/modules/sampled-palette-output.png`,
+                alt: "片刻取色板模板输出",
+                height: 625,
+                caption: "颜色本身也可以成为分享内容。",
+                frame: "poster"
+              }
+            ],
+            points: [
+              "来源明确。",
+              "风格统一。"
+            ]
+          },
+          {
+            id: "export",
+            label: "06 / 导出",
+            title: "导出页让作品链路有明确结束点。",
+            description:
+              "预览、下载、保存和返回首页集中在一屏，避免用户在最后一步迷路，也让 MVP 先把导出体验做稳。",
+            shots: [
+              {
+                src: `${BASE}images/pianke/modules/export-result.png`,
+                alt: "片刻导出完成页",
+                height: 1161,
+                caption: "完成页承担下载和保存闭环。",
+                frame: "phone"
+              }
+            ],
+            points: [
+              "闭环明确。",
+              "路径稳定。"
+            ]
+          }
+        ]
       },
       features: [
         {
-          step: "01 / 重新定位",
-          title: "用户缺的不是修图工具，而是轻量发布路径。",
+          step: "01 / 成品路径",
+          title: "先验证照片能否快速变成可发布内容。",
           description:
-            "从同学访谈、问卷和社媒内容观察中，把早期摄影作品集方向收敛成 AI 辅助图片模板编辑器，避开与醒图、Canva 在复杂图层能力上的正面竞争。",
+            "围绕“上传图片、选择模板、编辑文字和样式、实时预览、导出分享”搭建核心链路。",
           details: [
-            "核心判断是普通用户已经有拍照和修图工具，但缺少把照片快速包装成卡片、海报、日记图、分享图的轻量路径。",
-            "因此产品不追求无限自由画布，而是用高质量模板约束审美决策，让用户更快得到可以发布的成品。"
+            "用户先看到成品方向，再进入编辑。",
+            "模板约束审美决策，减少普通用户的创作压力。"
           ]
         },
         {
-          step: "02 / 通用编辑底座",
-          title: "围绕上传、套模板、参数编辑、预览和导出建立主链路。",
+          step: "02 / 记忆格式",
+          title: "用模板把散落照片整理成稳定内容形态。",
           description:
-            "图片上传、文字编辑、样式配置、模板预览和导出能力被抽象成可复用底座，用模板配置化支撑时刻卡、海报、创意边框、Paper Mount 等扩展。",
+            "时刻卡承接单次抵达，花园胶片承接连续片段，都是可扩展的配置化模板。",
           details: [
-            "模板不是一次性页面，而是可配置的编辑单元：图片槽位、文字槽位、颜色、比例、装饰元素和导出参数都尽量沉到数据结构里。",
-            "这让单人开发可以持续加模板，而不是每次都重写一套编辑页。"
+            "图片、文字、颜色、比例和装饰元素都服务于最终输出。",
+            "配置化模板让新模板可以复用上传、编辑、预览和导出能力。"
           ]
         },
         {
-          step: "03 / 范围取舍",
-          title: "暂缓账户系统和高自由画布，优先保证成品质感。",
+          step: "03 / 颜色与动效",
+          title: "主动收敛 MVP，把质量放在功能数量前面。",
           description:
-            "在无后端、单人开发和小程序 30MB 包体限制下，MVP 只保留能验证分享价值的能力：模板质量、编辑路径清晰度和导出体验。",
+            "在无后端、单人开发和小程序限制下，暂缓账户系统、复杂素材库和高自由度画布编辑。",
           details: [
-            "账户系统、复杂素材库和高自由度画布都被推迟，因为它们会吞掉小程序包体和开发时间，却不直接证明用户是否愿意分享成品。",
-            "优先级排序很明确：先证明成品好看、编辑顺手、导出稳定，再讨论更重的社区和资产体系。"
+            "优先保证模板质量、编辑路径清晰度和导出体验。",
+            "短循环动效先用预设验证分享价值，而不是扩成完整视频编辑器。"
           ]
         }
       ]
@@ -308,7 +588,12 @@ export const portfolioData: PortfolioData = {
       subtitle: "Diary Vault",
       role: "本地私人档案工具",
       description:
-        "一个把私人日记当作编辑档案来对待的本地工具。不是云笔记，不是博客后台，不是 AI 写作助手。",
+        "一个围绕私人写作整理、检索和回看建立的本地档案工具。它把日记当作长期资料，而不是临时笔记。",
+      live: {
+        href: "https://cocacolin123.github.io/Dariy-/",
+        label: "进入公开演示版",
+        note: "这只是演示 Demo，并非实际成品。公开入口使用样本文本展示时间线、管理和 AI 辅助流程，不开放私人日记数据。"
+      },
       shots: {
         cover: `${BASE}images/diary/cover.png`,
         timeline: `${BASE}images/diary/timeline.png`
@@ -323,27 +608,27 @@ export const portfolioData: PortfolioData = {
         {
           title: "文件即真理，不绑定格式",
           description:
-            "日记存为本地 Markdown，按年/月归档。即使软件消失，日记依然是一组可读的 .md 文件。"
+            "日记存为本地 Markdown，并按年/月归档。即使工具停止维护，内容仍然是一组可读文件。"
         },
         {
           title: "111 篇日记驱动分类",
           description:
-            "不是拍脑袋分类。标注全部真实日记后得到 5 维度 × 12 标签，宁缺毋滥，16 篇没有情绪标签，45 篇没有场所标签。"
+            "基于真实日记标注得到 5 维度 × 12 标签，并保留无标签样本，避免为了分类而强行分类。"
         },
         {
           title: "杂志编辑式时间轴",
           description:
-            "列表不是表格或卡片墙，而是一条竖向时间轴。短引用、长导语、宽卡和首篇样式由字数和 index % 5 节奏分配。"
+            "用竖向时间轴替代表格和卡片墙，让短引用、长导语和宽卡形成阅读节奏。"
         },
         {
-          title: "Welcome 页是仪式",
+          title: "打开方式更克制",
           description:
-            "打开时先看到今天的日期和问候语，而不是统计仪表盘。背景色温随一天时间变化，12 月 31 日和 6 月 4 日的打开感受不同。"
+            "首屏先显示日期和问候，而不是统计仪表盘。它提醒用户这是私人档案，不是运营后台。"
         },
         {
-          title: "明确说不是",
+          title: "明确边界",
           description:
-            "不是通用暗色仪表盘、玻璃拟态、协作文档、博客 CMS 或 Word 克隆。每一个不做，都是一次防止 scope creep 的决策。"
+            "不做协作文档、博客 CMS 或 Word 克隆，把范围收在本地写作、归档和回看。"
         }
       ]
     },
@@ -352,8 +637,13 @@ export const portfolioData: PortfolioData = {
       subtitle: "Colin's Photography",
       role: "个人摄影世界",
       description:
-        "一个把照片当作被观看的对象，而非被浏览的列表的个人摄影世界。",
+        "一个用来组织个人摄影、章节浏览和沉浸式观看的影像站点。",
       quote: "The site should feel like a night walk through a personal archive.",
+      live: {
+        href: "https://cocacolin123.github.io/Colin-Photo/",
+        label: "进入摄影集",
+        note: "这只是演示 Demo，并非实际成品。公开入口用于展示摄影观看路径、章节组织和沉浸式浏览体验。"
+      },
       shots: {
         landing: `${BASE}images/photo/landing.png`,
         album: `${BASE}images/photo/album.png`,
@@ -361,11 +651,11 @@ export const portfolioData: PortfolioData = {
         journal: `${BASE}images/photo/journal.png`,
         kingdom: `${BASE}images/photo/kingdom.png`
       },
-      focusNote: "按 Esc 退回黑暗，按方向键盲选光影。照片在这个环境里是唯一的光源。",
+      focusNote: "按 Esc 回到页面，按方向键切换图片。交互尽量退后，让照片成为视觉中心。",
       pages: [
         { label: "Landing", text: "封面时刻，建立情绪" },
         { label: "Works", text: "策展式章节，图片优先" },
-        { label: "Album", text: "左上下文，右摄影作品" },
+        { label: "Album", text: "上下文和摄影作品并置" },
         { label: "Lightbox", text: "键盘、Escape 和 swipe 手势" },
         { label: "Journal", text: "带日期的个人写作" }
       ],
@@ -373,41 +663,41 @@ export const portfolioData: PortfolioData = {
         {
           title: "摄影是主角，UI 是配角",
           description:
-            "UI effects must support image viewing rather than compete with it。任何让用户注意到 UI 而非照片的设计都是错的。"
+            "动效和控件只服务观看，不抢照片的注意力。"
         },
         {
           title: "暗色是观看室，不是装饰",
           description:
-            "黑不是纯黑，而是带冷调暗房色偏。暗是为了看见照片细节，不是为了显得很酷。"
+            "暗色界面承担观看室的作用，让照片细节和明暗关系更突出。"
         },
         {
           title: "品牌声音控制",
           description:
-            "文案安静、观察性、亲密，禁止营销话术、数据指标和过长解释。"
+            "文案保持安静、观察性和个人感，避免营销话术和过长解释。"
         },
         {
           title: "反参考比参考更重要",
           description:
-            "不是模板卡片网格，不以器材为中心，不做博客优先布局，About 页不写成简历，Journal 不加评论和泛滥标签。"
+            "不做器材展示站，也不把摄影页做成博客列表。结构服务观看，而不是堆信息。"
         },
         {
           title: "五页结构各司其职",
           description:
-            "Landing、Works、Album、Lightbox、Journal 五页分别承担情绪、策展、上下文、沉浸观看和私人写作。"
+            "Landing、Works、Album、Lightbox、Journal 分别承担情绪、策展、上下文、沉浸观看和写作记录。"
         }
       ]
     }
   },
   footer: {
-    quoteTitle: "我想做的不是更多页面，而是更顺手的工具。",
+    quoteTitle: "我希望把产品判断落到真实体验里。",
     quote:
-      "工具不该只是功能集合。好的工具会让用户忘掉界面本身，只感觉自己的想法更快落到了现实里。",
+      "这个站点不是单纯展示页面，而是把简历里的产品方法、AI-Native 协作和独立项目过程放到可以被直接体验的环境里。",
     links: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
       { label: "双语入口", href: "#/" }
     ],
     copyright: "Designed & Built by Colin L. © 2026",
-    tagline: "AI Product Manager · Creative Technologist"
+    tagline: "AI 产品 / 工具产品 / 增长转化"
   }
 };
