@@ -78,6 +78,17 @@ export default function App() {
     document.documentElement.lang = route === 'en' ? 'en' : 'zh-CN';
   }, [route]);
 
+  React.useLayoutEffect(() => {
+    const resetScroll = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    resetScroll();
+    const frame = window.requestAnimationFrame(resetScroll);
+    const timeout = window.setTimeout(resetScroll, 120);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timeout);
+    };
+  }, [route]);
+
   React.useEffect(() => {
     if (route === 'zh' || route === 'en') {
       window.sessionStorage.setItem('lastPortfolioRoute', `#/${route}`);

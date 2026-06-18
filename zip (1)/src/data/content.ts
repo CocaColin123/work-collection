@@ -181,6 +181,7 @@ export const portfolioData: PortfolioData = {
     contact: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
+      { label: "游戏经历", href: "#/game-mod-notes" },
       { label: "English", href: "#/en" }
     ],
     facts: [

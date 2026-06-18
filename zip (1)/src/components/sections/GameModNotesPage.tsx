@@ -41,7 +41,14 @@ const GameCard: React.FC<{ item: GameExperienceCard; index: number }> = ({ item,
     <AnimatedContent distance={34} delay={index * 0.04} className="h-full">
       <article className="flex h-full flex-col border border-ink/15 bg-[#fbfaf7] p-5 shadow-[0_16px_42px_rgba(26,26,26,0.04)] transition duration-300 hover:-translate-y-1 hover:border-[#536b35]/40">
         <div className="mb-5 flex items-start justify-between gap-4">
-          <h3 className="font-serif-zh text-xl font-bold leading-8">{item.title}</h3>
+          <div>
+            {item.primary ? (
+              <p className="mb-2 inline-flex border border-[#536b35]/30 bg-[#ebe7dc] px-2 py-1 font-sans-zh text-[0.68rem] font-medium text-[#536b35]">
+                主战场
+              </p>
+            ) : null}
+            <h3 className="font-serif-zh text-xl font-bold leading-8">{item.title}</h3>
+          </div>
           <span className="grid h-10 w-10 shrink-0 place-items-center border border-ink/10 bg-[#ebe7dc] text-[#536b35]">
             <Icon size={18} aria-hidden="true" />
           </span>
@@ -70,26 +77,17 @@ const ModInsightCard: React.FC<{ item: ModInsightCard; index: number }> = ({ ite
             <Icon size={18} aria-hidden="true" />
           </div>
           <h3 className="font-serif-zh text-xl font-bold leading-8">{item.type}</h3>
+          <p className="mt-3 font-sans-zh text-sm leading-7 text-neutral-700">{item.insight}</p>
         </div>
         <div className="grid gap-4">
           <div>
-            <p className="mb-2 font-serif-en text-[0.68rem] uppercase tracking-[0.2em] text-neutral-500">Representative</p>
+            <p className="mb-2 font-serif-en text-[0.68rem] uppercase tracking-[0.2em] text-neutral-500">Representative Mods</p>
             <div className="flex flex-wrap gap-2">
               {item.cases.map(mod => (
                 <span key={mod} className="border border-ink/10 bg-[#fffdf8] px-2.5 py-1.5 font-sans-zh text-xs leading-5 text-neutral-700">
                   {mod}
                 </span>
               ))}
-            </div>
-          </div>
-          <div className="grid gap-3 md:grid-cols-2">
-            <div className="border-l border-ink/15 pl-4">
-              <p className="font-serif-en text-[0.68rem] uppercase tracking-[0.2em] text-neutral-500">Pain Point</p>
-              <p className="mt-2 font-sans-zh text-sm leading-7 text-neutral-700">{item.pain}</p>
-            </div>
-            <div className="border-l border-[#536b35]/30 pl-4">
-              <p className="font-serif-en text-[0.68rem] uppercase tracking-[0.2em] text-[#536b35]">Product Lens</p>
-              <p className="mt-2 font-sans-zh text-sm font-medium leading-7 text-ink">{item.abstraction}</p>
             </div>
           </div>
         </div>
@@ -163,7 +161,7 @@ export const GameModNotesPage: React.FC<GameModNotesPageProps> = ({ returnHref }
           </FadeUp>
           <FadeUp delay={0.12}>
             <p className="border-l border-ink/20 pl-5 font-sans-zh text-base leading-8 text-neutral-700 md:text-lg md:leading-9">
-              从开放世界 RPG、魂系动作、沙盒生存与 UGC 生态中，观察玩家个性化、系统减负、内容扩展、快速试错和社交共创等需求。
+              主战场是开放世界 RPG 和魂系。这里补充的是长期玩家视角、Mod 生态观察，以及我对游戏工具产品的基础理解。
             </p>
           </FadeUp>
         </div>
@@ -175,7 +173,7 @@ export const GameModNotesPage: React.FC<GameModNotesPageProps> = ({ returnHref }
         <SectionHeader
           eyebrow="01 / Game Map"
           title="游戏经历地图"
-          description="按类型看玩家需求，而不是按游玩清单堆积。每类游戏都对应一种产品观察入口。"
+          description="开放世界 RPG 与魂系是主战场，其他类型作为补充视角。"
         />
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {gameExperienceMap.map((item, index) => (
@@ -190,7 +188,7 @@ export const GameModNotesPage: React.FC<GameModNotesPageProps> = ({ returnHref }
         <SectionHeader
           eyebrow="02 / Mod Patterns"
           title="Mod 经历与产品理解"
-          description="用 Mod 类型、代表案例、玩家痛点和产品抽象四层拆解，快速看到需求背后的产品机会。"
+          description="按玩家需求看 Mod，而不是按 Mod 名单堆积。"
         />
         <div className="grid gap-4">
           {modInsightMap.map((item, index) => (
@@ -204,15 +202,15 @@ export const GameModNotesPage: React.FC<GameModNotesPageProps> = ({ returnHref }
       <div className="mx-auto grid max-w-7xl gap-6">
         <CaseStrip
           title="艾尔登法环 Mod 生态"
-          note="同一款游戏里，玩家围绕挑战、社交、Build 和重复游玩重新配置体验。"
+          note="挑战、联机、Build、复玩。"
           cases={eldenRingCases}
-          summary="法环 Mod 生态背后不是简单分类，而是玩家围绕挑战强度、社交协作、Build 实验和重复游玩，对官方体验进行重新配置。"
+          summary="法环 Mod 说明，玩家会主动重排一款游戏的挑战和节奏。"
         />
         <CaseStrip
           title="上古卷轴 5 Mod 生态"
-          note="从 UI、角色、世界到规则，老滚 5 的 Mod 让官方世界变成玩家自己的世界。"
+          note="UI、角色、世界、规则。"
           cases={skyrimCases}
-          summary="老滚 5 的 Mod 生态说明，玩家不是只想装 Mod，而是在把官方世界改造成自己的私人世界。"
+          summary="老滚 5 的 Mod 说明，玩家会把官方世界改造成自己的长期世界。"
         />
       </div>
     </section>
@@ -225,7 +223,7 @@ export const GameModNotesPage: React.FC<GameModNotesPageProps> = ({ returnHref }
               <p className="font-serif-en text-xs uppercase tracking-[0.24em] text-neutral-500">05 / Product Summary</p>
               <h2 className="mt-3 font-serif-zh text-3xl font-black leading-tight md:text-5xl">我的理解</h2>
               <p className="mt-5 font-sans-zh text-base leading-8 text-neutral-300">
-                Mod 生态的价值不只是给玩家更多内容，而是让玩家在五个维度上重新配置自己的游戏体验。
+                Mod 的价值不只是加内容，而是让玩家重新配置体验。
               </p>
             </div>
             <div>
