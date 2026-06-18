@@ -6,10 +6,11 @@ import { DiarySection } from './components/sections/DiarySection';
 import { PhotoSection } from './components/sections/PhotoSection';
 import { FooterSection } from './components/sections/FooterSection';
 import { LanguageGate } from './components/sections/LanguageGate';
+import { GameModNotesPage } from './components/sections/GameModNotesPage';
 import { portfolioData, type PortfolioData } from './data/content';
 import { portfolioDataEn } from './data/contentEn';
 
-type Route = 'home' | 'zh' | 'en';
+type Route = 'home' | 'zh' | 'en' | 'gameModNotes';
 
 type TransitionBandProps = {
   from: string;
@@ -31,7 +32,15 @@ const getRouteFromHash = (): Route => {
   if (window.location.hash === '#/en') {
     return 'en';
   }
+  if (window.location.hash === '#/game-mod-notes') {
+    return 'gameModNotes';
+  }
   return 'home';
+};
+
+const getLastPortfolioRoute = (): '#/zh' | '#/en' => {
+  const savedRoute = window.sessionStorage.getItem('lastPortfolioRoute');
+  return savedRoute === '#/en' ? '#/en' : '#/zh';
 };
 
 type PortfolioPageProps = {
@@ -69,8 +78,18 @@ export default function App() {
     document.documentElement.lang = route === 'en' ? 'en' : 'zh-CN';
   }, [route]);
 
+  React.useEffect(() => {
+    if (route === 'zh' || route === 'en') {
+      window.sessionStorage.setItem('lastPortfolioRoute', `#/${route}`);
+    }
+  }, [route]);
+
   if (route === 'home') {
     return <LanguageGate />;
+  }
+
+  if (route === 'gameModNotes') {
+    return <GameModNotesPage returnHref={getLastPortfolioRoute()} />;
   }
 
   const data = route === 'en' ? portfolioDataEn : portfolioData;

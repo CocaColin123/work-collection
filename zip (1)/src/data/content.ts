@@ -695,7 +695,8 @@ export const portfolioData: PortfolioData = {
     links: [
       { label: "Email", href: "mailto:l15225585490@163.com" },
       { label: "Resume PDF", href: `${BASE}liu-peilong-resume.pdf` },
-      { label: "双语入口", href: "#/" }
+      { label: "双语入口", href: "#/" },
+      { label: "游戏经历与 Mod 产品理解", href: "#/game-mod-notes" }
     ],
     copyright: "Designed & Built by Colin L. © 2026",
     tagline: "AI 产品 / 工具产品 / 增长转化"
